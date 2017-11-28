@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="favicon.ico" sizes="16x16">
+    <link rel="icon" href="/Projekt_0/favicons/favicon-16x16.png" sizes="16x16">
     <!--    SEO: ideaalne pikkus 6 sõna    -->
     <title>Tere Tulemast front-end arendusse</title>
     <!--  SEO: ideaalne pikkus on 155 tähemärki  -->
@@ -15,10 +15,16 @@
 </head>
 
 <body>
+    <noscript>
+       Palun lylitage javascript sisse.
+   </noscript>
     <!--  tähtsaim pealkiri SEO: ideaalne 6 sõna -->
     <header>
         <a href="/" target="_self">
-            <img src="pildid/logo.png" alt="See on Front-end logo" height="300" width="300">
+            <!--            <img src="Logo.png" alt="See on Front-end logo" height="300" width="300">-->
+            <picture>
+                <source srcset="content/logo.svg" media="(min-width: 600px)">
+            </picture>
         </a>
         <nav>
             <ul>
@@ -34,7 +40,7 @@
                 </li>
 -->
                 <li>
-                    <a href="http://google.com">google link</a>
+                    <a href="http://google.com" rel="nofollow">google link</a>
                 </li>
                 <li>
                     <a href="http://bing.com">bingi link</a>
@@ -60,11 +66,108 @@
                     <li><del><code>&lt;del&gt;</code></del> on parem kui <code>&lt;s&gt;</code></li>
                     <li><small><code>&lt;small&gt;</code></small> on parem kui <code>&lt;span&gt;</code></li>
                 </ul>
+                <abbr title="Hüpertekst märgistuskeel">HTML</abbr> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corrupti tenetur mollitia, facilis tempora aspernatur quod impedit. Animi natus, tempora numquam non pariatur, qui impedit modi. Dignissimos dolorem expedita, dolores temporibus molestiae, possimus ut, vel explicabo cum quod alias saepe maxime. Fugiat in placeat atque repudiandae accusantium, earum aut pariatur veniam qui esse reiciendis minima vitae consequatur sapiente amet est unde repellat odit eveniet reprehenderit cupiditate nemo illo, incidunt labore. Earum velit quasi at totam nihil eveniet, recusandae magni enim, praesentium numquam illum rerum ea et ratione doloremque ipsum architecto labore nemo minima beatae. Error, veritatis dignissimos illum tempore cum.
             </p>
+            <p>
+                <a href="#firefox">Firefox</a> <kbd>Ctrl</kbd> + <kbd> S</kbd> <var>S</var> + <var>X</var> = <span id="summa">15</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ab debitis, molestias. Eveniet itaque harum nemo, voluptatum nulla quo, perspiciatis asperiores quidem repellat iste odio. Voluptate tempora eius reiciendis ex qui ab doloremque modi nulla non voluptas provident consequuntur eveniet officiis possimus explicabo facere repudiandae rem eum veritatis nemo eos esse tempore temporibus, et. Autem velit, odio, commodi fugiat provident odit necessitatibus itaque enim impedit repudiandae sed minus, veritatis doloremque. Possimus officia blanditiis magni natus expedita nulla eos beatae. Minima qui, cupiditate, harum repudiandae quaerat assumenda, consequatur dignissimos pariatur molestiae blanditiis libero velit quos impedit. Dicta quas, enim. Earum nemo enim inventore explicabo odio nisi possimus ipsum aspernatur nobis voluptatum, alias rem libero pariatur saepe commodi laudantium neque accusantium nihil recusandae, expedita odit iusto dolore asperiores ut. Accusamus corporis, eveniet maiores animi dignissimos illo. Ullam animi maxime omnis magni sapiente at, sequi maiores deleniti, obcaecati, magnam harum cupiditate sint provident?
+                <figure>
+                    <picture>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/240px-HTML5_logo_and_wordmark.svg.png" alt="HTML5 LOGO">
+                    </picture>
+                    <figcaption>
+                        HTML5 LOGO
+                    </figcaption>
+                </figure>
+            </p>
+            <hr>
+            <p>
+                <details>
+                    <summary>Detailid ladina keeles</summary>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste cumque at quaerat adipisci delectus! Praesentium possimus, voluptatibus explicabo. Minus aut pariatur perspiciatis eos iste minima distinctio! Vitae ea ut aut repudiandae quod corporis, repellendus quas error quisquam quo? Maiores tenetur nihil mollitia velit dolorum accusantium cum perspiciatis tempore laborum ipsam possimus omnis qui, id necessitatibus voluptatem. Quibusdam at rem similique sapiente fuga voluptate illo tempora, necessitatibus eos officiis beatae sed, inventore debitis atque, ullam aliquid rerum quaerat? Aspernatur tempora, unde consequuntur molestiae ex quis saepe provident quasi quos adipisci velit, eveniet harum. Rem, voluptatum. Vitae suscipit cum incidunt dolore, facere quis facilis ea quo accusantium autem, distinctio optio qui. Molestiae suscipit, rerum eaque quidem, quibusdam assumenda labore cumque rem accusantium, aperiam repellat optio architecto omnis atque esse consequatur dolor impedit cupiditate voluptates? Voluptas asperiores beatae explicabo, mollitia minima. Sit, non officiis voluptate adipisci nemo mollitia dolorum, dicta debitis blanditiis saepe.
+                    </p>
+                </details>
+
+            </p>
+            <ul>
+                <li>kommid</li>
+                <li>Mandariinid</li>
+            </ul>
+            <ol>
+                <li>Esimene</li>
+                <li>Teine</li>
+            </ol>
+            <dl>
+                <!--       <dt> definition list        -->
+                <dt> <dfn id="firefox">Firefox</dfn></dt>
+                <dd>Tasuta, avatud l2htekoodiga, graafiline veebilehitseja, mis on arendatud Mozilla korporatsiooni ja hulga vabatahtlikute poolt.</dd>
+                <dt>Internet</dt>
+                <dd>See on ...</dd>
+            </dl>
+            <ruby>
+                 漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
+                 字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+            </ruby>
+            <pre>
+                //////
+                //  //
+                //////
+                <code>
+                    &lt;code&gt;;
+                    std::cout &lt;&lt; "Hello World;
+                </code>
+            </pre> Tere... <time datetime="2001-05-012T21:00">May 12</time> <q>Tsitaat esimene</q>
+            <blockquote>
+                Troonil osab iga teine istuda, aga m2ngida kajanarri, selleks on aru vaja.
+                <cite>A.H.Tammsaare</cite>
+            </blockquote>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>P2is 0</th>
+                        <th>P2is 1</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td>Jalus 0</td>
+                        <td>Jalus 1</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Keha 0</td>
+                        <td>Keha 1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="article"></div>
+            <section></section>
+
         </article>
     </main>
+    <aside>
+        <!--    reklaam     -->
+        <iframe src="http://postimees.ee" frameborder="0">Ei toeta iframe</iframe>
+        <iframe src="../Projekt_1/index.html" frameborder="0">
+        ei toeta iframe
+    </iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/rf8Gi2RLKWQ?rel=0&amp;controls=0" frameborder="0" gesture="media" allowfullscreen>
+        </iframe>
+        <video controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4">
+            ei toeta video formaati
+        </video>
+        <button name="button" id="nuppuke"> vajuta mind</button>
+    </aside>
     <footer>
-        
+        <address>
+            <a href="mailto:juku(ät)mail.ee">juku(ät)mail.ee</a> <br>
+            <a href="tel:+3725532355">+3725532355</a> <br>
+            Estonia 74011 <br>
+            Kulle vald <br>
+            Tamme tee 11
+        </address>
     </footer>
 </body>
 
