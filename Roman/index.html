@@ -19,10 +19,15 @@
         <meta name="keywords" content="front-end arendus"> 
     </head> 
     <body>
+        <noscript>
+            Palun lülitage javascript sisse.
+        </noscript>
         <header>
             <a href="/" target="_self">
-                <img src="Logo.png"
-                    alt="See on Front-end logo" height="150" width="300">
+                <picture>
+                    <source srcset="content/logo.svg" media="(min-width: 600px)">
+                    <img src="content/logo.png" alt="See on Front-end logo">
+                </picture>
             </a>
             <nav>
                 <ul>
@@ -38,10 +43,10 @@
                     </li>
                     -->
                     <li>
-                        <a href="http://google.com">Googli link</a>
+                        <a href="http://google.com" rel="nofollow">Googli link</a>
                     </li>
                     <li>
-                        <a href="http://bing.com">Bingi link</a>
+                        <a href="http://bing.com" rel="nofollow">Bingi link</a>
                     </li>
                 </ul>
             </nav>
@@ -53,6 +58,7 @@
                     <h1>Tere Tulemast front-end arenduse koolitusele</h1>
                     Tere front-end!
                     <br><time datetime="2010-07-03">Jul 3, 2010</time>
+                    <button name="button" id="nuppuke">Vajuta Mind</button>
                 </header>
                 <p>
                     <h2>Strong, em, mark, ins, del</h2>
@@ -80,13 +86,27 @@
                     convallis augue metus, at consectetur nulla molestie et. Suspendisse sed ligula convallis libero luctus 
                     tempus eget quis massa. Sed nec sem eget justo maximus finibus nec non augue. Pellentesque auctor 
                     aliquet lorem. Nullam in sollicitudin nunc, vel congue sapien. 
+                    <figure>
+                            <picture>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/HTML_logo.png" alt="HTML5 logo">
+                            </picture>
+                        <figcaption>
+                            HTML5 Logo
+                        </figcaption>
+                    </figure>
                 </p>
+                <hr>
                 <p>
-                    Integer lacinia augue et tellus viverra posuere sit amet quis ligula. Ut porta nisi eget metus lobortis scelerisque. 
-                    Donec pulvinar lobortis metus, id luctus lacus vestibulum sit amet. Aliquam a nunc orci. Fusce in gravida nisi. Fusce 
-                    mollis mi non dolor mollis ultricies. Nulla eleifend dui et tellus eleifend consectetur. Mauris a consequat ligula. 
-                    Nulla hendrerit vel est id dapibus. Phasellus id nibh sagittis ante tempor dapibus vitae quis ligula. Cras id magna et 
-                    tortor maximus feugiat at ac lacus. Curabitur sed orci pharetra, cursus ipsum eget, hendrerit nibh. 
+                    <details>
+                        <summary>Detailid ladina keeles</summary>
+                        <p>
+                            Integer lacinia augue et tellus viverra posuere sit amet quis ligula. Ut porta nisi eget metus lobortis scelerisque. 
+                            Donec pulvinar lobortis metus, id luctus lacus vestibulum sit amet. Aliquam a nunc orci. Fusce in gravida nisi. Fusce 
+                            mollis mi non dolor mollis ultricies. Nulla eleifend dui et tellus eleifend consectetur. Mauris a consequat ligula. 
+                            Nulla hendrerit vel est id dapibus. Phasellus id nibh sagittis ante tempor dapibus vitae quis ligula. Cras id magna et 
+                            tortor maximus feugiat at ac lacus. Curabitur sed orci pharetra, cursus ipsum eget, hendrerit nibh. 
+                        </p>
+                    </details>
                 </p>
                 <ul>
                     <li>Kommid</li>
@@ -109,10 +129,68 @@
                     漢 <rp>(</rp><rt>Kan</rt><rp>)</rp>
                     字 <rp>(</rp><rt>ji</rt><rp>)</rp>
                 </ruby>
+                <pre>
+                    ////////
+                    //    //
+                    ////////
+                    <code>
+                        &lt;code&gt;
+                        std::cout &lt;&lt; "Hello World";
+                    </code>
+                </pre>
+                Tere... <time datetime="2001-05-12T21:00">May 12</time> <q>Tsitaat esimene</q>
+                <blockquote>
+                        Troonil oskab iga teine istuda, aga mängida kajanarri, selleks on aru vaja. 
+                        <cite>A.H.Tammsaare</cite>
+                </blockquote>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Päis 0</th>
+                            <th>Päis 1</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td>Jalus 0</td>
+                            <td>Jalus 1</td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Keha 0</td>
+                            <td>Keha 1</td>
+                        </tr>
+                    </tbody>
+                </table>  
+                <div class="section"></div>
+                <section></section>
             </article>
         </main>
+        <aside>
+            <!-- reklaam -->
+            <iframe src="http://postimees.ee">
+                Ei toeta iframe
+            </iframe>
+            <iframe src="../Projekt_1/index.html">
+                Ei toeta iframe
+            </iframe>
+            <iframe src="https://www.youtube.com/embed/rf8Gi2RLKWQ?rel=0&amp;controls=0" 
+                frameborder="0" gesture="media" allowfullscreen>
+            </iframe>
+            <video controls>
+                <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"/>
+                Ei toeta video formaati
+            </video>
+        </aside>
         <footer>
-
+            <address>
+                <a href="mailto:juku(ät)mail.ee">juku(ät)mail.ee</a><br>
+                <a href="tel:+3725532355">+3725532355</a><br>
+                Estonia 74011 <br>
+                Kulle vald <br>
+                Tamme tee 11
+            </address>
         </footer>
     </body>
 </html>
