@@ -58,14 +58,15 @@
         </nav>
     </header>
     <main>
-        <article>
+        <article itemscope itemtype="http://schema.org/TechArticle">
             <header>
-                <h1>Tere Tulemast front-end arenduse koolitusele</h1>
-                Tere front-end!
+                <h1 itemprop="name">Tere Tulemast front-end arenduse koolitusele</h1>
+                Autor: <cite itemprop="author"> Juku Tamm</cite>
+                <meta itemprop="proficiencyLevel" content="Beginner"><!--        E ole näha lõppkasutajale        -->
                 <br>
-                <time datetime="2010-07-03">Jul 3, 2010</time>
+                <time datetime="2010-07-03" itemprop="datePublished">Jul 3, 2010</time>
             </header>
-            <p>
+            <p itemprop="description"><!--        Artikli alguses tihti kasutatav lühikokkuvõte on sobilik descriptioniks       -->
                 <h2>Strong, em, mark, ins, del</h2>
                 <ul>
                     <li><strong><code>&lt;strong&gt;</code></strong> on parem kui <code>&lt;b&gt;</code></li>
