@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" prefix="og: http://ogp.me/ns# fb: http://ogp/ns/fb# article: http://ogp/ns/article#">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
@@ -11,6 +11,15 @@
         <meta name="description" content="Front-end arendust on võimalik õppida">
         <!-- ainult iseendale, enam ei kasutata -->
         <meta name="keywords" content="Front-end arendus">
+        <!-- SEO: opengraph -->
+        <meta property="fb:app_id" content="302184053505305377">
+        <meta property="og:type" content="article">
+        <meta property:"og:url" content="http://www.koduleht.ee/Artikkel-html">
+        <meta property:"og:title" content="Tere tulemast front-end arenduse koolitusele">
+        <meta property:"og:description" content="Front-end arendust on võimalik õppida">
+        <meta property:"og:image" content="https://images-na.ssl-images-amazon.com/images/M/MV5BMjM2OTUzMDk5NV5BMl5BanBnXkFtZTgwNjY5MDgxNDM@._V1_SX1500_CR0,0,1500,999_AL_.jpg">
+        <meta property="article:published_time" content="2010-07-03T:19:00">
+
     </head>
     <body>
         <noscript>Palun lülitage javascript sisse</noscript>
@@ -42,15 +51,16 @@
                 </nav>
         </header>
         <main>
-            <article>
+            <article itemscope itemtype="http://schema.org/TechArticle">
                 <header>
                     <!-- Tähtsaim pealkiri, SEO: ideaalne 6 sõna -->
-                    <h1>Tere tulemast front-end arenduse koolitusele</h1>
-                    Tere front-end!
-                    <br><time datetime="2010-07-03">Jul 3, 2010</time>
+                    <h1 itemprop="name">Tere tulemast front-end arenduse koolitusele</h1>
+                    Autor: <cite itemprop="author">Juku Tamm</cite>
+                    <meta itemproperty="proficiencyLevel" content="Beginner"> <!-- ei ole näha lõppkasutajale -->
+                    <br><time datetime="2010-07-03" itemprop="datePublished">Jul 3, 2010</time>
                     <button name="button" id="nupuke">Vajuta mind</button>
                 </header>
-                <p>
+                <p itemprop="description"><!-- Artikli alguses tihti kasutatav lühikokkuvõte descriptioniks -->
                     <h2>Strong, em, mark, ins, del</h2>
                     <ul>
                         <li><strong><code>&lt;strong&gt;</code></strong> on parem kui <code>&lt;b&gt;</code></li>
@@ -60,7 +70,10 @@
                         <li><del><code>&lt;del&gt;</code></del> on parem kui <code>&lt;s&gt;</code></li>
                         <li><small><code>&lt;small&gt;</code></small> on parem kui <code>&lt;span&gt;</code></li>
                     </ul>
-                    <abbr title="Hüpertekst märgistuskeel">HTML</abbr>
+                    <abbr title="Hüpertekst märgistuskeel">HTML</abbr>Lorem ipsum dolor, 
+                    sit amet consectetur adipisicing elit. Accusantium quaerat libero, 
+                    temporibus nihil eligendi ullam tempora repudiandae numquam rem ea dolores
+                     consequuntur similique esse asperiores dolore, eveniet possimus modi obcaecati.
                 </p>
                 <p>
                      <a href="#Firefox"></a><kbd>Ctrl</kbd>+<kbd>S</kbd> <var>S</var>+<var>X</var>= <span id="summa">15</span> 
@@ -121,7 +134,7 @@
                 </ruby>
                 <pre>
                     /////
-                    /// //
+                    // //
                     /////
                     <code>
                         &lt;code&gt;
