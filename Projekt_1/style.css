@@ -8,3 +8,44 @@ p {
     text-decoration: underline; 
 }
 /*16-nd süsteem 0,1,2,3,4,5,6,7,8,9,A,A,C,D,E,F*/
+.autor {
+    font-size: 24px;
+}
+#nupuke {
+    border-radius: 25px;
+}
+dfn#Firefox {
+    border: 1px solid gray;
+}
+*[itemscope] {
+    cursor: pointer;
+}
+[itemscope] {
+    cursor: crosshair!important;
+}
+p + * {
+    color: sandybrown;
+}
+ul, ol {
+    font-weight: 900;
+}
+/*süviti otsing*/
+nav li {
+    list-style-type: none;
+}
+/*pealiskaudne otsing*/
+ol > li {
+    list-style-type: square;
+}
+#nupuke:active {
+    color: red;
+    border-radius: 0;
+}
+/*:-moz-any(ul, ol) li,
+:-webkit-any(ul, ol) li,
+:matches(ul, ol) li {
+    color: yellow;
+}*/
+:-webkit-any-link {
+    text-decoration: overline;
+}
