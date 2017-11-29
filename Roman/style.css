@@ -1,0 +1,10 @@
+nav {
+    border: 1px solid black;
+}
+p {
+    color: #00F;
+    background-color: rgb(78, 151, 108);
+    border: 1px solid hsl(15, 16%, 10%);
+    text-decoration: underline;
+}
+/*16-nd süsteem 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F*/
