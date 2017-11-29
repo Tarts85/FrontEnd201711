@@ -1,0 +1,11 @@
+nav {
+    border: 2px solid black;
+}
+
+p{
+    color: #00f;
+    color: #0000ff;
+    background-color: rgb(55, 137, 67);
+    border: 1px solid hsl(14, 15%, 14%);
+    text-decoration: underline;
+}
