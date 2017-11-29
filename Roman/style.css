@@ -8,3 +8,47 @@ p {
     text-decoration: underline;
 }
 /*16-nd süsteem 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F*/
+.autor {
+    font-size: 24px;
+}
+#nuppuke {
+    border-radius: 25px;
+}
+dfn#Firefox{
+    border: 1px solid gray;
+}
+article[itemscope]{
+    cursor: pointer;
+}
+*[itemscope]{
+    cursor: pointer;
+}
+[itemscope]{
+    cursor: crosshair!important;
+}
+p + * {
+    color: sandybrown;
+}
+ul, ol {
+    font-weight: 900;
+}
+/*süviti otsing */
+nav li {
+    list-style-type: none;
+}
+/*pealis kaudne otsing*/
+ol > li{
+    list-style-type:square;
+}
+#nuppuke:active {
+    color: red;
+    border-radius: 0;
+}
+/*-webkit-, -moz-, -ms-*/
+:-webkit-any-link{
+    text-decoration: overline;
+}
+:any-link {
+    text-decoration: overline;
+}
+
