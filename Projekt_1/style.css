@@ -69,3 +69,59 @@ p::first-letter {
 ::selection {
     background: cyan;
 }
+@media only screen  
+and (min-width: 1920px) {
+  body { background: rgb(210, 250, 222); }
+}
+@media only screen
+and (min-width: 1280px)  
+and (max-width: 1919px) {
+  body { background: rgb(250, 210, 245); }
+}
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1279px) {
+  body { background: rgb(211, 210, 250); }
+}
+@media only screen 
+and (min-width: 0) 
+and (max-width: 479px) {
+  body { background: lightgoldenrodyellow; }
+  @supports (display:flex) {
+    p{
+        color: inherit;
+        display:flex;
+        background: pink;
+    }
+    @supports not(display:flex){
+    p{
+        float:right;
+        background: orange;
+    }
+}
+    
+.wrapper{
+    background-image: url("https://www.rahvaraamat.ee/images/products/000/539/458/thumbnails/big/d43cc4170880254a9396cd31c3bbfa5cb678336f/%C3%B6%C3%B6lamp-j%C3%A4nes.jpg");
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 10px 15px 20px 25px;
+    padding: 25px 20px 15px 10px;
+    border-style: solid dashed;
+    border-width: medium;
+    border-color: blue;
+    border-radius: 5%;
+}
+p{
+    padding: 5px;
+    text-align: justify;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-indent: 25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-shadow: 3px 3px darkgoldenrod;
+
+
+}
