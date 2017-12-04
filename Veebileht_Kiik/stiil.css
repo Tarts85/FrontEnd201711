@@ -1,0 +1,11 @@
+h1 {
+	color: #09FF05;
+	text-align: center;
+}
+
+.menu ul{
+	text-align: center;
+	list-style-type: none;
+	margin: 20px;
+}
+
