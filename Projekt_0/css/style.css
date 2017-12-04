@@ -1,8 +1,10 @@
+@charset "utf-8";
+@import "common.css" screen, projection;
 nav {
     border: 2px solid black;
 }
 
-p{
+p {
     color: #00f;
     color: #0000ff;
     background-color: rgb(55, 137, 67);
@@ -16,22 +18,22 @@ p{
 
 #nuppuke {
     border-radius: 25px;
-    
+
 }
 
 dfn#firefox {
     border: 2px solid gray;
 }
 
-article[itemscope]{
+article[itemscope] {
     cursor: pointer;
 }
 
-[itemscope]{
+[itemscope] {
     cursor: crosshair;
 }
 
-*[itemscope]{
+*[itemscope] {
     cursor: pointer!important;
 }
 
@@ -39,16 +41,19 @@ p + * {
     color: sandybrown;
 }
 
-ul, ol {
+ul,
+ol {
     font-weight: 900;
 }
 
 /*süviti otsing*/
-nav li{
+
+nav li {
     list-style: none;
 }
 
 /*pealiskaudne otsing*/
+
 ol > li {
     list-style-type: square;
 }
@@ -71,3 +76,23 @@ ol > li {
 :any-link{
     text-decoration: overline;
 }*/
+
+/*pseudo elemendid*/
+
+.nupp::after {
+    content: "->Tere";
+    position: absolute;
+    transform: translate(190px);
+}
+
+p::first-letter {
+    font-size: 200%
+}
+
+p::first-line {
+    background-color: red;
+}
+
+::selection {
+    background: cyan;
+}
