@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" prefix="og: http://ogp.me/ns# fb: http://ogp/ns/fb# article: http://ogp/ns/article#">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
@@ -11,20 +11,34 @@
         <meta name="description" content="Front-end arendust on võimalik õppida">
         <!-- ainult iseendale, enam ei kasutata -->
         <meta name="keywords" content="Front-end arendus">
+        <!-- SEO: opengraph -->
+        <meta property="fb:app_id" content="302184053505305377">
+        <meta property="og:type" content="article">
+        <meta property:"og:url" content="http://www.koduleht.ee/Artikkel-html">
+        <meta property:"og:title" content="Tere tulemast front-end arenduse koolitusele">
+        <meta property:"og:description" content="Front-end arendust on võimalik õppida">
+        <meta property:"og:image" content="https://images-na.ssl-images-amazon.com/images/M/MV5BMjM2OTUzMDk5NV5BMl5BanBnXkFtZTgwNjY5MDgxNDM@._V1_SX1500_CR0,0,1500,999_AL_.jpg">
+        <meta property="article:published_time" content="2010-07-03T:19:00">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <style>
+        nav {
+            color:brown;
+        }
+        </style>
+
     </head>
     <body>
-        <noscript>Palun lülitage javascript sisse    
-        </noscript>
+        <noscript>Palun lülitage javascript sisse</noscript>
         <header>
             <a href="/" target="_self">
-                
-                <picture>
-                    <source srcset="content/logo.svg" media="(max-width: 200px)">
-                    <img src="content/logo.png" alt="See on front-end logo"> 
+                <!-- <img src="pildid/logo.png" alt="See on front-end logo"> -->
+                <picture><source srcset="content/logo.svg" media= "(min width: 600 px")>
+                    <img src="content/logo.png"
+                    alt= "See on Front-end logo">
                 </picture>
             </a>
             <nav>
-                    <ul>
+                    <ul style= "background-color:yellow">
                         <li>
                             <a href="../Projekt_1/index.html"></a>
                         </li>
@@ -34,24 +48,25 @@
                         </li>
                         -->
                         <li>
-                            <a href="http://google.com" rel="nofollow">Google'i link</a>
+                            <a href="http://google.com">Google'i link</a>
                         </li>
                         <li>
-                                <a href="http://bing.com" rel="nofollow"> Bingi link</a>
+                                <a href="http://bing.com">Bingi link</a>
                         </li>
                     </ul>
                 </nav>
         </header>
         <main>
-            <article>
+            <article itemscope itemtype="http://schema.org/TechArticle">
                 <header>
                     <!-- Tähtsaim pealkiri, SEO: ideaalne 6 sõna -->
-                    <h1>Tere tulemast front-end arenduse koolitusele</h1>
-                    Tere front-end!
-                    <br><time datetime="2010-07-03">Jul 3, 2010</time>
-                    <button name="button" id="nupuke">Vajuta Mind</button>
+                    <h1 itemprop="name">Tere tulemast front-end arenduse koolitusele</h1>
+                    Autor: <cite itemprop="author" class="autor">Juku Tamm</cite>
+                    <meta itemproperty="proficiencyLevel" content="Beginner"> <!-- ei ole näha lõppkasutajale -->
+                    <br><time datetime="2010-07-03" itemprop="datePublished">Jul 3, 2010</time>
+                    <button name="button" id="nupuke">Vajuta mind</button>
                 </header>
-                <p>
+                <p itemprop="description"><!-- Artikli alguses tihti kasutatav lühikokkuvõte descriptioniks -->
                     <h2>Strong, em, mark, ins, del</h2>
                     <ul>
                         <li><strong><code>&lt;strong&gt;</code></strong> on parem kui <code>&lt;b&gt;</code></li>
@@ -61,121 +76,124 @@
                         <li><del><code>&lt;del&gt;</code></del> on parem kui <code>&lt;s&gt;</code></li>
                         <li><small><code>&lt;small&gt;</code></small> on parem kui <code>&lt;span&gt;</code></li>
                     </ul>
-                    <abbr title="Hüperteksti märgistuskeel">HTML</abbr> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non viverra elit. 
-                    Suspendisse ac sagittis felis. Sed id diam vitae dui faucibus hendrerit. 
-                    Aenean sit amet orci ipsum. Morbi nibh velit, ultricies eget dolor quis, venenatis mattis mi. 
-                    Phasellus sed convallis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor bibendum tellus vitae sodales. 
-                    Integer elementum laoreet posuere. Nam et dui nec nibh dictum ullamcorper at sit amet orci. 
-                    Nullam iaculis turpis vel imperdiet venenatis. Maecenas mattis tortor id leo dignissim, in sodales justo viverra. Nullam accumsan augue eget ornare gravida.
-                    Phasellus quis urna ut nisl iaculis maximus. 
-                    </p>
-                    <p>
-                        <a href="#Firefox">Firefox</a> <kbd>Ctrl</kbd> + <kbd>S</kbd> <var>S</var> + <var>X</var> = <span id="summa">15</span>
-                        Pellentesque facilisis arcu at bibendum scelerisque. Nunc eleifend orci ultricies, feugiat mauris egestas, aliquam est. 
-                        Quisque id pellentesque metus, vel rutrum sapien. Ut sed mauris a ante ornare tempor non ut urna. Aenean at tortor nec mi lobortis hendrerit in ac libero. Sed vitae ligula sed magna volutpat sollicitudin. Integer quis porta dolor. 
-                        Ut ac odio vestibulum, fringilla orci id, egestas nunc. In condimentum convallis lectus maximus porta. Curabitur hendrerit sodales nibh, vitae auctor justo varius quis. 
-                        Vivamus nulla augue, iaculis et sagittis quis, porttitor ac lectus.
-                  </p>
-                  <figure>
-                        <picture>
-            <img src="http://www.clker.com/cliparts/j/u/e/b/M/t/html-logo-md.png" alt="HTML 5 logo"> 
-                    </picture>
-                  </figure>
-                  <p>
-                      <details>
-                          <summary>Detailid ladina keeles</summary>
-                          <p>  
-                    Donec finibus augue id efficitur hendrerit. Maecenas efficitur placerat ipsum et ullamcorper. 
-                    Aliquam at risus lectus. 
-                    Quisque tempus, arcu ut tristique mattis, justo turpis aliquet metus, sed vehicula ligula odio id ligula. 
-                    Curabitur commodo laoreet pellentesque. Pellentesque bibendum egestas nulla, id molestie ligula dapibus quis. Quisque nisl nunc, blandit non odio non, aliquam mollis erat. 
-                    Donec vel massa eget nisi vehicula auctor. Sed vitae est ligula. Integer scelerisque erat eu luctus egestas. 
-                    Proin molestie elit eu arcu consequat, eu varius felis vehicula. Duis vulputate est odio, nec placerat dui aliquam id. 
-                    Nunc erat sapien, sodales at scelerisque id, condimentum et enim. Vestibulum diam nibh, placerat et nunc pretium, pharetra ultricies magna. Etiam metus purus, posuere eu orci a, sollicitudin elementum dui. 
-                    Morbi quis faucibus lacus.
+                    <abbr title="Hüpertekst märgistuskeel">HTML</abbr>Lorem ipsum dolor, 
+                    sit amet consectetur adipisicing elit. Accusantium quaerat libero, 
+                    temporibus nihil eligendi ullam tempora repudiandae numquam rem ea dolores
+                     consequuntur similique esse asperiores dolore, eveniet possimus modi obcaecati.
                 </p>
-            </details>
-            
-                  </p>
-                  <ul>
-                      <li>Kommid</li>
-                      <li>Mandariinid</li>
-                  </ul>
-                  <ol>
-                      <li>Esimene</li>
-                      <li>Teine</li>
-                  </ol>
-                  <dl>
-                      <dt><dfn id="Firefox">Firefox</dfn></dt>
-                      <dd>Tasuta, avatud lähtekoodiga, graafiline veebilehitseja, 
-                        mis on arendatud Mozilla korporatsiooni ja hulga vabatahtlike poolt,</dd>
-                        <dt>Internet</dt>
-                        <dd>See on...</dd>
-                  </dl>
-                  <ruby>
-                        所<rp>(</rp><rt>Kan</rt><rp>)</rp>
-                        与<rp>(</rp><rt>Ji</rt><rp>)</rp>
-                  </ruby>
-                  <pre>
-                     //////
-                     //  //
-                     //////
-                     <code>
-                         &lt;code&gt;
-                         std::cout &lt;&gt; "Hello World";
-                     </code>
-                  </pre>
-                  Tere...<time datetime="2010-07-03T21:00">May 12</time> <q>Tsitaat esimene</q>
-                    <blockquote>
-                        Troonil oskab iga teine istuda, aga mängida kojanarri, selleks on aru vaja.
-                        <cite>A.H.Tammsaare</cite>
-                    </blockquote>
-                    <table border="1">
-                      <thead>
-                          <tr>
-                          <th>Päis 0</th>
-                          <th>Päis 1</th>
+                <p>
+                     <a href="#Firefox"></a><kbd>Ctrl</kbd>+<kbd>S</kbd> <var>S</var>+<var>X</var>= <span id="summa">15</span> 
+                     ut lorem eget elit fermentum luctus eget vel ipsum. Phasellus
+                     sodales lacinia felis. Maecenas ultrices augue id feugiat sollicitudin.
+                      Quisque blandit odio vehicula, tincidunt neque sed, egestas purus. 
+                      Fusce pulvinar, lectus ut maximus placerat, magna augue gravida risus,
+                       eu sollicitudin urna enim sit amet lectus. Duis id purus quis justo 
+                       ultrices dapibus. Fusce risus elit, bibendum et rhoncus vel, rhoncus 
+                    ac ligul
+                    a. In porta viverra libero, quis congue ante bibendum eget.
+                     Sed dictum dignissim odio. Vivamus at ullamcorper tortor. Nulla cursus, 
+                     lacus vel facilisis dictum, lectus sapien luctus odio, 
+                     at hendrerit est ligula sed nisl. Ut tempor fringilla condimentum.
+                     <figure>
+                        <picture>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/120px-HTML5_logo_and_wordmark.svg.png"
+                            alt= "See on HTML5 logo">
+                        </picture>
+                        <figcaption>HTML5 logo</figcaption>
+                    </figure>
+                </p>
+                <hr>
+                <p>
+                    <details>
+                    <summary>Detailid ladina keeles</summary> 
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                     Donec erat sapien, consectetur iaculis pulvinar aliquam, 
+                     vehicula ut nunc. Nulla facilisi. 
+                     Vivamus vulputate nisl diam, id pretium magna congue eu. 
+                     Morbi porttitor eleifend eros, varius tempor dolor posuere sed. 
+                     Vestibulum condimentum sollicitudin mi, non fermentum dui elementum at.
+                      Ut nibh felis, interdum vitae maximus sit amet, volutpat et orci. 
+                      In eu ligula at mi dignissim scelerisque. 
+                    Nulla vehicula fringilla lorem, eu viverra magna consequat sed.
+                    </p>
+                    </details>
+                </p>
+                <ul>
+                    <li>Kommid</li>
+                    <li>Mandariinid</li>
+                </ul>
+                <ol>
+                    <li>Esimene</li>
+                    <li>Teine</li>
+                </ol>
+                <dl>
+                    <dt><dfn id="Firefox">Firefox</dfn></dt>
+                    <dd>
+                        Tasuta, avatud lähtekoodiga, graafiline veebilheitseja, mis on arendatud
+                        Mozilla korporatsiooni ja hulga vabatahtlike poolt.
+                    </dd>
+                    <dt>Internet</dt>
+                    <dd>See on ...</dd>
+                </dl>
+                <ruby>
+                    國 <rp>(</rp><rt>Kan</rt><rp>)</rp>
+                </ruby>
+                <pre>
+                    /////
+                    // //
+                    /////
+                    <code>
+                        &lt;code&gt;
+                        std::cout &lt;&lt;"Hello World";
+                    </code>
+                </pre>
+                Tere...<time datetime="2001-05-12T21::00">May 12</time><q>Tsitaat esimene</q>
+                <blockquote>
+                    Troonil oskab iga teine istuda, aga mängida kojanarri, selleks on aru vaja.
+                    <cite>A.H.Tammsaare</cite>
+                </blockquote>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Päis 0</th>
+                        <th>Päis 1</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td>Jalus 1</td>
+                            <td>Jalus 2</td>
                         </tr>
-                          </thead> 
-                          <tfoot>
-                              <tr>
-                                <td>Jalus 0</td>  
-                                <td>Jalus 1</td> 
-                              </tr>
-                              </tfoot> 
-                              <tbody>
-                                  <tr>
-                                      <td>Keha 0</td>
-                                      <td>Keha 1</td>
-                                  </tr>
-                              </tbody>
-                    </table>
-                    <div class="article"></div>
-                    <section></section>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Keha 0</td>
+                            <td>Keha 1</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <divclass="section"></div>
+                <section></section>
             </article>
         </main>
         <aside>
-<!--reklaam-->
-<iframe src="http://postimees.ee">
-    Ei toeta iframe
-</iframe>
-<iframe src="../Projekt_1/index.html">
-    Ei toeta iframe
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rf8Gi2RLKWQ" frameborder="0" allowfullscreen>
-</iframe>
-<video controls>
-<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"/>
-Ei toeta video formaati
-</video>
+            <!-- reklaam -->
+            <iframe src="http://postimees.ee">Ei toeta iframe</iframe>
+            <iframe src="../Projekt_1/index.html">Ei toeta iframe</iframe>
+            <iframe src="https://www.youtube.com/embed/H8s4IKIjh8o"
+             frameborder="0" gesture="media" allowfullscreen></iframe>
+             <video controls>
+                 <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"/>
+                 Ei toeta video formaati
+            </video>
         </aside>
         <footer>
             <address>
-                <a href="mailto:juku(ät)mail.ee">juku(ät)mail.ee</a><br>
-                <a href="tel:+3725532355">+3725532355</a><br>
+                <a href="mailto:juku@mail.ee">juku@mail.ee</a><br>
+                <a href="tel:+37255532355">+37255532355</a><br>
                 Estonia 74011 <br>
-                Kulle Vald <br>
-                Tamme tee 11
+                Kulle vald <br>
+                Tamme tee 11<br>
             </address>
         </footer>
     </body>
