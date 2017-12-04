@@ -1,3 +1,5 @@
+@charset "utf-8";
+@import "common.css" screen, projection;
 nav{
     border: 1px solid black;
 
@@ -52,3 +54,20 @@ button:active {
 :any-link{
     text-decoration: overline;
 }*/
+/*Pseudo elemendid*/
+.nupp::after{
+    content: "->Tereäöõ";
+    position: absolute;
+    transform: translate(10px);
+}
+/* Selects the first line of a <p> */
+p::first-line {
+    color: rgb(8, 94, 43);
+  }
+/* Selects the first letter of a <p> */
+p::first-letter {
+    font-size: 300%;
+  }
+  ::selection {
+    background: cyan;
+  }
