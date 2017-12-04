@@ -71,3 +71,51 @@ p::first-letter {
   ::selection {
     background: cyan;
   }
+  @media only screen 
+  and (min-width: 1280px)  {
+    body { background: rgb(148, 123, 142); }
+}
+@media only screen 
+and (min-width: 0x) 
+and (max-width: 479px) {
+  body { background: lightgoldenrodyellow; }
+  h1 {color: darkblue;}
+}
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1279px) {
+  body { background: rgb(50, 117, 70); }
+}
+@media only screen 
+and (min-width: 0px) 
+and (max-width: 479px) {
+  body { background: rgba(148, 85, 34, 0.062); }}
+    @supports (display: flex){
+    p {color: inherit;
+       display: flex;
+       background: rgba(216, 47, 17, 0.733); }}
+    @supports not (display: flex) {
+    p {float: right;
+       background: violet;}
+}
+.wrapper{
+    background-image: url("https://vignette.wikia.nocookie.net/tesfanon/images/c/c1/Forest.png/revision/latest?cb=20120617220407");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 10px 15px 20px 25px;
+    padding: 25px 20px 15px 10px;
+    border-style: solid dashed;
+    border-width: medium;
+    border-radius: 14%;
+}
+p{
+    text-align: justify;
+    padding: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-indent: 25px;
+    height: 50px;
+    text-shadow: 3px 3px darkgoldenrod;
+}
