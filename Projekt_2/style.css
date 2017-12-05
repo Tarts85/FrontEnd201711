@@ -130,3 +130,68 @@ p{
 .small2{
     font-size: 1,4em;
 }
+a:link{
+    color:green;
+}
+a:visited{
+    color: skyblue;
+}
+a:hover{
+    font-size: 1.2em;
+}
+a:active{
+    font-size:1.5em;
+}
+.link-nupp:link, .link-nupp:visited{
+    display: inline-block;
+    background-color: lightgreen;
+    color: black;
+    padding: 15px 25px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+}
+.link-nupp:hover, .link-nupp:active{
+    background-color: green;
+    font-size: 1em;
+}
+nav li {
+    display: inline-block;
+}
+.kuup{
+    display: inline-block;
+    width: 20px;
+    height:20px;
+    background-color: white;
+}
+#div1{
+    position: static;
+    background-color:blue
+}
+#div2{
+    position: relative;
+    background-color:darkgreen;
+    top:100px
+}
+#div3{
+    position: fixed;
+    background-color: darkgreen;
+    /*top:50px;*/
+}
+#div5{
+    position: absolute;
+    background-color: darkorchid;
+    top: 100px
+}
+#div6{
+    background-color: darkseagreen;
+    position: sticky;
+    top:10px;
+}
+#kuubid{
+    background-color: saddlebrown;
+    height: 70px;
+
+
+}
