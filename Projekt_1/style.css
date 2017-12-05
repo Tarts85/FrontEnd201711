@@ -3,7 +3,14 @@
 nav {
     border:1px solid black;
 }
+h1 {
+    font-family: "Nunito", sans-serif;
+    font-weight: normal;
+}
 p {
+    font-style: oblique;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2em;
     color: #00F; 
     background-color: rgb(78,151,108);
     border: 1px solid hsl(15,16%,10%);
@@ -100,7 +107,7 @@ and (max-width: 479px) {
     }
 }
     
-.wrapper{
+.wrapper {
     background-image: url("https://www.rahvaraamat.ee/images/products/000/539/458/thumbnails/big/d43cc4170880254a9396cd31c3bbfa5cb678336f/%C3%B6%C3%B6lamp-j%C3%A4nes.jpg");
     background-repeat: no-repeat; 
     background-attachment: fixed;
@@ -113,7 +120,7 @@ and (max-width: 479px) {
     border-color: blue;
     border-radius: 5%;
 }
-p{
+p {
     padding: 5px;
     text-align: justify;
     text-transform: uppercase;
@@ -121,7 +128,26 @@ p{
     text-indent: 25px;
     text-overflow: ellipsis;
     overflow: hidden;
-    text-shadow: 3px 3px darkgoldenrod;
-
-
+    text-shadow: 2px 2px darkgoldenrod;
+}
+@font-face {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Nunito Bold'), local('Nunito-Bold'), url(https://fonts.gstatic.com/s/nunito/v9/TttUCfJ272GBgSKaOaD7KltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+body {
+    font-size: 20px;
+}
+.small {
+    font-variant: small-caps;
+    font-style: oblique;
+    font-size: 2em/*20px*//*16 pt*/;
+}
+.small2 {
+    font-size: 2em;
+}
+.small3 {
+    font-size: 1.5rem;
 }
