@@ -99,7 +99,7 @@ and (max-width: 479px) {
        background: violet;}
 }
 .wrapper{
-    background-image: url("https://vignette.wikia.nocookie.net/tesfanon/images/c/c1/Forest.png/revision/latest?cb=20120617220407");
+    background-image: url("https://images.pexels.com/photos/62693/pexels-photo-62693.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -111,11 +111,22 @@ and (max-width: 479px) {
     border-radius: 14%;
 }
 p{
+    font-family: 'Shrikhand', cursive;
+    font-weight: 400; /*Ignoreeritakse kui antud weight puudub*/
     text-align: justify;
     padding: 5px;
     text-transform: uppercase;
     text-decoration: none;
     text-indent: 25px;
     height: 50px;
-    text-shadow: 3px 3px darkgoldenrod;
+    text-shadow: 1px 1px darkgoldenrod;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+.small{font-variant: small-caps;
+    font-style: oblique;
+    font-size: 2em;/*16pt;*/ /*20px;*/
+}
+.small2{
+    font-size: 1,4em;
 }
