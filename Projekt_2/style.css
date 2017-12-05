@@ -119,13 +119,13 @@ p{
     text-decoration: none;
     text-indent: 25px;
     height: 50px;
-    text-shadow: 1px 1px darkgoldenrod;
+    text-shadow: 1px 1px 5px darkgoldenrod;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
 }
 .small{font-variant: small-caps;
     font-style: oblique;
-    font-size: 2em;/*16pt;*/ /*20px;*/
+    font-size: 1em;/*16pt;*/ /*20px;*/
 }
 .small2{
     font-size: 1,4em;
@@ -190,8 +190,43 @@ nav li {
     top:10px;
 }
 #kuubid{
-    background-color: saddlebrown;
+    background: linear-gradient(90deg, brown, skyblue);
     height: 70px;
 
 
+}
+p[itempro] {
+    padding: 10px;
+    height: 200px;
+    overflow: auto;
+
+}
+header a{
+    margin: 15px;
+    float: left;
+}
+header div{
+    overflow: auto;
+}
+.logo-link:hover {
+    opacity: 0.5;
+    filter: alpha (opacity=50);
+}
+.lisa {
+display: none;
+}
+header div:hover .lisa {
+    display: inline;
+}
+body {
+    counter-reset: j2rg;
+}
+h2::before {
+    counter-increment: j2rg;
+    content: counter(j2rg) " . ";
+}
+dd{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
