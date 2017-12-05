@@ -8,72 +8,76 @@ projection;
     src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/8qcEw_nrk_5HEcCpYdJu8BTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
     unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
-    nav {
-        border: 2px solid black;
-    }
-    p {
-        font-family: 'Lato', sans-serif;
-        font-weight: 400;
-        font-style: italic;
-        font-size: 1em;
-        color: #00f;
-        color: #0000ff;
-        background-color: rgb(55, 137, 67);
-        border: 1px solid hsl(14, 15%, 14%);
-        text-decoration: underline;
 
-    }
+nav {
+    border: 2px solid black;
+}
 
-    .autor {
-        font-size: 24px;
-    }
+p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1em;
+    color: #00f;
+    color: #0000ff;
+    background-color: rgb(55, 137, 67);
+    border: 1px solid hsl(14, 15%, 14%);
+    text-decoration: underline;
 
-    #nuppuke {
-        border-radius: 25px;
+}
 
-    }
+.autor {
+    font-size: 24px;
+}
 
-    dfn#firefox {
-        border: 2px solid gray;
-    }
+#nuppuke {
+    border-radius: 25px;
 
-    article[itemscope] {
-        cursor: pointer;
-    }
+}
 
-    [itemscope] {
-        cursor: crosshair;
-    }
+dfn#firefox {
+    border: 2px solid gray;
+}
 
-    *[itemscope] {
-        cursor: pointer!important;
-    }
+article[itemscope] {
+    cursor: pointer;
+}
 
-    p + * {
-        color: sandybrown;
-    }
+[itemscope] {
+    cursor: crosshair;
+}
 
-    ul,
-    ol {
-        font-weight: 900;
-    }
+*[itemscope] {
+    cursor: pointer!important;
+}
 
-    /*süviti otsing*/
-    nav li {
-        list-style: none;
-    }
+p + * {
+    color: sandybrown;
+}
 
-    /*pealiskaudne otsing*/
-    ol > li {
-        list-style-type: square;
-    }
+ul,
+ol {
+    font-weight: 900;
+}
 
-    #nuppuke:active {
-        color: red;
-        border-radius: 0;
-    }
+/*süviti otsing*/
 
-    /* -webkit-,-moz-,-ms-
+nav li {
+    list-style: none;
+}
+
+/*pealiskaudne otsing*/
+
+ol > li {
+    list-style-type: square;
+}
+
+#nuppuke:active {
+    color: red;
+    border-radius: 0;
+}
+
+/* -webkit-,-moz-,-ms-
 
 :-webkit-any-link{
     text-decoration: overline;
@@ -86,98 +90,194 @@ projection;
 :any-link{
     text-decoration: overline;
 }*/
-    /*pseudo elemendid*/
-    .nupp::after {
-        content: "->Tere";
-        position: absolute;
-        transform: translate(190px);
-    }
 
-    p::first-letter {
-        font-size: 200%
-    }
+/*pseudo elemendid*/
 
-    p::first-line {
-        background-color: red;
-    }
+.nupp::after {
+    content: "->Tere";
+    position: absolute;
+    transform: translate(190px);
+}
 
-    ::selection {
-        background: cyan;
-    }
+p::first-letter {
+    font-size: 200%
+}
 
-    @media only screen and (min-width: 1920px) {
-        body {
-            line-height: 1.4;
-            background: red;
-        }
-    }
+p::first-line {
+    background-color: red;
+}
 
-    @media only screen and (min-width: 1280px) and (max-width: 1919px) {
-        body {
-            line-height: 1.4;
-            background: blue;
-        }
-    }
+::selection {
+    background: cyan;
+}
 
-    @media only screen and (min-width: 480px) and (max-width: 1279px) {
-        body {
-            line-height: 1.4;
-            background: green;
-        }
+@media only screen and (min-width: 1920px) {
+    body {
+        line-height: 1.4;
+        background: red;
     }
+}
 
-    @media only screen and (min-width: 0px) and (max-width: 479px) {
-        body {
-            line-height: 1.4;
-            background: yellow;
-            ;
-        }
+@media only screen and (min-width: 1280px) and (max-width: 1919px) {
+    body {
+        line-height: 1.4;
+        background: blue;
     }
+}
 
-    @supports (display: flex) {
-        p {
-            color: inherit;
-            display: flex;
-            background: #9b0b24;
-        }
+@media only screen and (min-width: 480px) and (max-width: 1279px) {
+    body {
+        line-height: 1.4;
+        background: green;
     }
+}
 
-    @supports not (display: flex) {
-        p {
-            float: right;
-            background: #ff0000;
-        }
+@media only screen and (min-width: 0px) and (max-width: 479px) {
+    body {
+        line-height: 1.4;
+        background: yellow;
+        ;
     }
+}
 
-    .wrapper {
-        background: url(https://images.unsplash.com/photo-1492854536278-1f94bbec5732?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        margin:10px 15px 20px 25px;
-        padding: 25px 20px 15px 10px;
-        border-style: solid dashed;
-        border-width: 20px;
-    }
-
+@supports (display: flex) {
     p {
-        
-        text-align: justify;
-        padding: 5px;
-        text-transform: uppercase;
-        text-decoration: none;
-        text-indent: 25px;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        color: inherit;
+        display: flex;
+        background: #9b0b24;
     }
+}
+
+@supports not (display: flex) {
+    p {
+        float: right;
+        background: #ff0000;
+    }
+}
+
+.wrapper {
+    background: url(https://images.unsplash.com/photo-1492854536278-1f94bbec5732?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 10px 15px 20px 25px;
+    padding: 25px 20px 15px 10px;
+    border-style: solid dashed;
+    border-width: 20px;
+}
+
+p {
+
+    text-align: justify;
+    padding: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-indent: 25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
 .small {
     font-variant: small-caps;
     font-size: 2em;
 }
+
 .small15 {
     font-size: 12px;
 }
+
 .small2 {
     font-size: 2em;
+}
+
+a:link {
+    color: green;
+}
+
+a:visited {
+    color: blue;
+}
+
+
+a:hover {
+    font-size: 1.2em;
+    color: red;
+}
+
+a:active {
+    font-size: 1.5em;
+}
+
+.link-nupp:link,
+.link-nupp:visited {
+    display: inline-block;
+    background-color: lightgreen;
+    color: black;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    margin: 10px 0;
+}
+
+.link-nupp:hover,
+.link-nupp:active {
+    background-color: green;
+    font-size: 1em;
+}
+nav li {
+    display: inline-block;
+}
+
+nav ul {
+    width: 90%;
+}
+
+#kuubid {
+    background-color: black;
+height: 50px;
+    width: 100%;
+    display: block;
+}
+
+
+.kuup {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+}
+
+#div1 {
+    position: static;
+    background-color: aqua;
+}
+
+#div2 {
+    position: relative;
+    background-color: red;
+    top: 10px;
+}
+
+#div3 {
+    position: fixed;
+    background-color: green;
+}
+
+#div4 {
+    position: static;
+    background-color: yellow;
+}
+
+#div5 {
+    position: absolute;
+    background-color: grey;
+    top: 0px;
+}
+
+#div6 {
+    position: sticky;
+    background-color: grey;
+    top:20px;
+
 }
