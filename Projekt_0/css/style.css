@@ -1,70 +1,79 @@
 @charset "utf-8";
 @import "common.css" screen,
 projection;
-nav {
-    border: 2px solid black;
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/8qcEw_nrk_5HEcCpYdJu8BTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
+    nav {
+        border: 2px solid black;
+    }
+    p {
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 1em;
+        color: #00f;
+        color: #0000ff;
+        background-color: rgb(55, 137, 67);
+        border: 1px solid hsl(14, 15%, 14%);
+        text-decoration: underline;
 
-p {
-    color: #00f;
-    color: #0000ff;
-    background-color: rgb(55, 137, 67);
-    border: 1px solid hsl(14, 15%, 14%);
-    text-decoration: underline;
-}
+    }
 
-.autor {
-    font-size: 24px;
-}
+    .autor {
+        font-size: 24px;
+    }
 
-#nuppuke {
-    border-radius: 25px;
+    #nuppuke {
+        border-radius: 25px;
 
-}
+    }
 
-dfn#firefox {
-    border: 2px solid gray;
-}
+    dfn#firefox {
+        border: 2px solid gray;
+    }
 
-article[itemscope] {
-    cursor: pointer;
-}
+    article[itemscope] {
+        cursor: pointer;
+    }
 
-[itemscope] {
-    cursor: crosshair;
-}
+    [itemscope] {
+        cursor: crosshair;
+    }
 
-*[itemscope] {
-    cursor: pointer!important;
-}
+    *[itemscope] {
+        cursor: pointer!important;
+    }
 
-p + * {
-    color: sandybrown;
-}
+    p + * {
+        color: sandybrown;
+    }
 
-ul,
-ol {
-    font-weight: 900;
-}
+    ul,
+    ol {
+        font-weight: 900;
+    }
 
-/*süviti otsing*/
+    /*süviti otsing*/
+    nav li {
+        list-style: none;
+    }
 
-nav li {
-    list-style: none;
-}
+    /*pealiskaudne otsing*/
+    ol > li {
+        list-style-type: square;
+    }
 
-/*pealiskaudne otsing*/
+    #nuppuke:active {
+        color: red;
+        border-radius: 0;
+    }
 
-ol > li {
-    list-style-type: square;
-}
-
-#nuppuke:active {
-    color: red;
-    border-radius: 0;
-}
-
-/* -webkit-,-moz-,-ms-
+    /* -webkit-,-moz-,-ms-
 
 :-webkit-any-link{
     text-decoration: overline;
@@ -77,88 +86,98 @@ ol > li {
 :any-link{
     text-decoration: overline;
 }*/
-
-/*pseudo elemendid*/
-
-.nupp::after {
-    content: "->Tere";
-    position: absolute;
-    transform: translate(190px);
-}
-
-p::first-letter {
-    font-size: 200%
-}
-
-p::first-line {
-    background-color: red;
-}
-
-::selection {
-    background: cyan;
-}
-
-@media only screen and (min-width: 1920px) {
-    body {
-        line-height: 1.4;
-        background: red;
+    /*pseudo elemendid*/
+    .nupp::after {
+        content: "->Tere";
+        position: absolute;
+        transform: translate(190px);
     }
-}
 
-@media only screen and (min-width: 1280px) and (max-width: 1919px) {
-    body {
-        line-height: 1.4;
-        background: blue;
+    p::first-letter {
+        font-size: 200%
     }
-}
 
-@media only screen and (min-width: 480px) and (max-width: 1279px) {
-    body {
-        line-height: 1.4;
-        background: green;
+    p::first-line {
+        background-color: red;
     }
-}
 
-@media only screen and (min-width: 0px) and (max-width: 479px) {
-    body {
-        line-height: 1.4;
-        background: yellow;
+    ::selection {
+        background: cyan;
     }
-}
 
-@supports (display: flex) {
+    @media only screen and (min-width: 1920px) {
+        body {
+            line-height: 1.4;
+            background: red;
+        }
+    }
+
+    @media only screen and (min-width: 1280px) and (max-width: 1919px) {
+        body {
+            line-height: 1.4;
+            background: blue;
+        }
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 1279px) {
+        body {
+            line-height: 1.4;
+            background: green;
+        }
+    }
+
+    @media only screen and (min-width: 0px) and (max-width: 479px) {
+        body {
+            line-height: 1.4;
+            background: yellow;
+            ;
+        }
+    }
+
+    @supports (display: flex) {
+        p {
+            color: inherit;
+            display: flex;
+            background: #9b0b24;
+        }
+    }
+
+    @supports not (display: flex) {
+        p {
+            float: right;
+            background: #ff0000;
+        }
+    }
+
+    .wrapper {
+        background: url(https://images.unsplash.com/photo-1492854536278-1f94bbec5732?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin:10px 15px 20px 25px;
+        padding: 25px 20px 15px 10px;
+        border-style: solid dashed;
+        border-width: 20px;
+    }
+
     p {
-        color: inherit;
-        display: flex;
-        background: #9b0b24;
+        
+        text-align: justify;
+        padding: 5px;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-indent: 25px;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
-}
 
-@supports not (display: flex) {
-    p {
-        float: right;
-        background: #ff0000;
-    }
+.small {
+    font-variant: small-caps;
+    font-size: 2em;
 }
-
-.wrapper {
-    background: url(https://images.unsplash.com/photo-1492854536278-1f94bbec5732?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center
-    margin: 10px 15px 20px 25px;
-    padding: 25px 20px 15px 10px;
-    border-style: solid dashed;
-    border-width: 20px;
+.small15 {
+    font-size: 12px;
 }
-
-p {
-    text-align: justify;
-    padding: 5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-indent: 25px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-shadow:  3px 3px darkgoldenrod;
+.small2 {
+    font-size: 2em;
 }
