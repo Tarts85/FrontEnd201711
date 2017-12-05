@@ -137,7 +137,7 @@ p{
     text-indent: 25px;
     text-overflow: ellipsis;
     overflow: hidden;
-    text-shadow: 1px 1px darkgoldenrod;
+    text-shadow: 1px 1px 5px darkgoldenrod;
    
 }
 .small{
@@ -211,7 +211,44 @@ nav li{
     /*top:10px;*/
 }
 #kuubid{
-    background-color: saddlebrown;
+    background: linear-gradient(135deg, brown, skyblue);
     height: 70px;
+    clear: both;
 }
+p[itemprop] {
+    padding: 30px;
+    height: 400px;
+    overflow: auto;
+}
+header a{
+    margin: 15px;
+    float: left;
+
+}
+header div{
+    overflow: auto;
+}
+.logo-link:hover{
+    opacity: 0.5;
+    filter: alpha(opacity=50); /*IE8-*/
+}
+.lisa{
+    display: none;
+}
+header div:active .lisa{
+    display: inline;
+}
+body{
+    counter-reset: j2rg;
+}
+h2::before {
+    counter-increment: j2rg;
+    content: counter(j2rg) ". ";
+}
+dd{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 

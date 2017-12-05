@@ -41,12 +41,18 @@
                 Palun lülitage javascript sisse.
             </noscript>
             <header>
-                <a href="/" target="_self">
-                    <picture>
-                        <source srcset="content/logo.svg" media="(min-width: 600px)">
-                        <img src="content/logo.png" alt="See on Front-end logo">
-                    </picture>
-                </a>
+                <div>
+                    <a class="logo-link" href="/" target="_self">
+                        <picture>
+                            <source srcset="content/logo.svg" media="(min-width: 600px)">
+                            <img src="content/logo.png" alt="See on Front-end logo">
+                        </picture>
+                    </a>
+                    In hac habitasse platea dictumst. Vivamus 
+                    convallis augue metus, at consectetur nulla molestie et. Suspendisse sed ligula convallis libero luctus 
+                    tempus eget quis massa. Sed nec sem eget justo maximus finibus nec non augue. Pellentesque auctor 
+                    aliquet lorem. <span class="lisa"> Nullam in sollicitudin nunc, vel congue sapien. </span> 
+                </div>
                 <section id="kuubid">
                     <div class="kuup" id="div1"></div>
                     <div class="kuup" id="div2"></div>
@@ -87,16 +93,17 @@
                         <br><time datetime="2010-07-03" itemprop="datePublished">Jul 3, 2010</time>
                         <span class="nupp"><button name="button" id="nuppuke">Vajuta Mind</button></span>
                     </header>
+                    <h2>Strong, em, mark, ins, del</h2>
+                    <ul>
+                        <li><strong><code>&lt;strong&gt;</code></strong> on parem kui <code>&lt;b&gt;</code></li>
+                        <li><em><code>&lt;em&gt;</code></em> on parem kui <code>&lt;i&gt;</code></li>
+                        <li><mark><code>&lt;mark&gt;</code></mark> on parem kui <code>&lt;span&gt;</code></li>
+                        <li><ins><code>&lt;ins&gt;</code></ins> on parem kui <code>&lt;u&gt;</code></li>
+                        <li><del><code>&lt;del&gt;</code></del> on parem kui <code>&lt;s&gt;</code></li>
+                        <li><small><code>&lt;small&gt;</code></small> on parem kui <code>&lt;span&gt;</code></li>
+                    </ul>
                     <p itemprop="description"><!-- Artikli alguses tihti kasutatav lühikokkuvõte on sobilik descriptioniks -->
-                        <h2>Strong, em, mark, ins, del</h2>
-                        <ul>
-                            <li><strong><code>&lt;strong&gt;</code></strong> on parem kui <code>&lt;b&gt;</code></li>
-                            <li><em><code>&lt;em&gt;</code></em> on parem kui <code>&lt;i&gt;</code></li>
-                            <li><mark><code>&lt;mark&gt;</code></mark> on parem kui <code>&lt;span&gt;</code></li>
-                            <li><ins><code>&lt;ins&gt;</code></ins> on parem kui <code>&lt;u&gt;</code></li>
-                            <li><del><code>&lt;del&gt;</code></del> on parem kui <code>&lt;s&gt;</code></li>
-                            <li><small><code>&lt;small&gt;</code></small> on parem kui <code>&lt;span&gt;</code></li>
-                        </ul>
+                        
                         <abbr title="Hüperteksti märgistuskeel">HTML</abbr> <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Morbi ut pharetra elit. Fusce vestibulum,<span class="small3"> orci sit amet porttitor luctus, quam libero posuere sapien, 
                         et euismod <span class="small2">lorem metus ut turpis.</span></span></span> In ac elit justo. Class aptent taciti sociosqu ad litora torquent 
@@ -123,6 +130,7 @@
                         </figure>
                     </p>
                     <hr>
+                    <h2>Integer lacinia augue</h2>
                     <p>
                         <details>
                             <summary>Detailid ladina keeles</summary>
