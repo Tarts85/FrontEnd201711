@@ -282,5 +282,37 @@ figure{
     animation-iteration-count: 2;
     animation-direction: alternate;
     animation-fill-mode: forwards;
-
 }
+#kuubid3{
+    background: burlywood;
+    padding: 10px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: space-around;
+    }
+.kuup3{
+    width: 100px;
+    min-height: 100px;
+    margin: 10px;
+    background: darkgreen;
+}
+#div31{
+    flex: 1 1 auto;
+    align-self: center;
+}
+#div33{
+    order: 1;
+    align-self: flex-end;
+}
+#div34{
+    order: -2;
+    flex-grow: 2;
+}
+
+
+
+
