@@ -339,3 +339,111 @@ dd {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+figure {
+    transform: perspective(200px)rotate3d(0,-1,1,60deg)translate3d(15px, 50px, 0px) scale3d(0.5,0.7,1);
+
+}
+
+.link-nupp {
+    transform-origin: 50% -100%;
+    transform: skew(15deg, 25deg)  rotate(90deg);
+}
+
+h2 {
+    clear: both;
+}
+
+#kuubid2{
+    padding: 2px;
+    height: 150px;
+    background-color: burlywood;
+    clear:both;
+    overflow: auto;
+    resize: both;
+}
+.kuup2 {
+
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    margin: 2px;
+}
+
+#div21 {
+    transition: width 3s, height 3s cubic-bezier(1,.01,.83,.67) 1s;
+}
+#div21:hover {
+    width: 100px;
+    height: 50px;
+}
+
+#div22 {
+    transform: rotate(0);
+    transition: width 3s, transform 2s, background 2s;
+}
+
+#div22:hover {
+    width: 100px;
+    transform: rotate(45deg);
+    background: lightgreen;
+}
+
+@keyframes animatsioon {
+/*    0% {background-color: green;}*/
+    50% {background-color: red;}
+    100% {background-color: blue;}
+}
+
+#div23 {
+    transition: animatsioon, background-color 3s;
+    
+}
+
+#div23:hover {
+    background-color: green;
+    animation-name: animatsioon;
+    animation-delay: 3s;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+aside {
+    display: none;
+}
+
+#kuubid3 {
+    padding: 10px;
+    background: burlywood;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: center;
+}
+
+.kuup3 {
+    width: 100px;
+    min-height: 100px;
+    margin: 10px;
+    background: darkgreen;
+}
+/*esimene vastutab kas laseb growida teine shrinkida ja 3 on vaikimisi auto
+*/
+#div31 {
+    flex: 1 1 auto;
+    align-self: center;
+}
+#div33 {
+    order: 1;
+
+}
+
+#div34 {
+    order: -2;
+    flex-grow: 2;
+}
