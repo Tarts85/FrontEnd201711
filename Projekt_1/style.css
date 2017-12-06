@@ -305,3 +305,31 @@ h2 {
     animation-direction: alternate;
     animation-fill-mode: both;
 }
+#kuubid3{
+    padding: 10px;
+    background: burlywood;
+    min-height: 300px;
+    display: flex;
+    flex-direction:  row;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: space-around;
+}
+.kuup3{
+    width: 100px;
+    min-height: 100px;
+    margin: 10px;
+    background: darkgreen;
+}
+#div31{
+    flex: 1 1 auto;
+    align-self: center;
+}
+#div33{
+    order: 1;   
+}
+#div34{
+    order: -2;
+    flex-grow: 2;
+}
