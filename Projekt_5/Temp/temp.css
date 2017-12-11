@@ -1,6 +1,18 @@
-.container{
+.row, .container{
     background-color: red;
+}
+.row {
+    height: 100px;
 }
 .container-fluid{
     background-color: blue;
+}
+.col, .col-6, .col-3, .col-9, .col-sm, .col-md-3 {
+    border-width: 1px;
+    border-style: solid;
+    background-color: lightpink;
+}
+img {
+    width: 100px;
+    height: 100px;
 }
