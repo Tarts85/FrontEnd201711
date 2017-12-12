@@ -18,11 +18,11 @@
         "strict": true,
 
         "target": "es5",
-        "module": "system",
+        "module": "commonjs",
         "sourceMap": true,
         "lib":[ "dom", "es5", "es6", "es2016.array.include" ],
-        "outFile": "/temp/script.js",
-        "baseUrl": "./temp/",
+        "outFile": "app.js",
+        "baseUrl": "./app/",
         "paths": {
             "*": ["*", "generated/*"]
         },
