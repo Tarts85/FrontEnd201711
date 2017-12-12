@@ -9,7 +9,9 @@
     "bootstrap": "^4.0.0-beta.2"
   },
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.3.0",
+    "typescript": "^2.6.2",
+    "tslint": "^5.8.0"
   },
   "scripts": {
     "lite": "lite-server -port 3000",
