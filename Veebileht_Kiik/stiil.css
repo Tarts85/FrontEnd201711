@@ -1,11 +1,106 @@
+body {
+	background: rgb(89,106,114); /* Old browsers */
+    background: -webkit-linear-gradient(rgba(89,106,114,0.7) 0%, rgba(206,220,231,0.7) 52%, rgba(89,106,114,0.5) 86%);
+    background: -o-linear-gradient(rgba(89,106,114,0.7) 0%, rgba(206,220,231,0.7) 52%, rgba(89,106,114,0.5) 86%);
+    background: linear-gradient(rgba(89,106,114,0.7) 0%, rgba(206,220,231,0.7) 52%, rgba(89,106,114,0.5) 86%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#596a72', endColorstr='#596a72',GradientType=0 ); /* IE6-9 */
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}			
+
 h1 {
-	color: #09FF05;
+	text-align: center;
+	color: rgba(256, 256, 256, 0.2);
+}
+
+h2 a {
+	text-decoration: none;
+	color: black;
+}
+
+header a {
+	font-size: 1.5em;
+	display: inline;
+	text-decoration: none;
+	color: rgba(214, 255, 244, 0.8);
+}
+
+header img {
+	margin-top: 25px;
+	margin-left: 40%;
+	margin-right: 40%;
+	width: 300px;
+}
+
+table {
+	border: 1px solid rgba(115, 115, 115, 0.5);
+	border-radius: 5px;
+	padding: 10px;
+}
+table th {
+	padding: 5px;
 	text-align: center;
 }
 
-.menu ul{
+table td {
+	padding: 5px;
 	text-align: center;
+}
+
+p {
+	text-align: justify;
+}
+
+.menu a:hover {
+	background-color: rgba(40, 214, 185, 0.3 );
+	border-radius: 10px;
+}
+
+.menu {
+	border-width: 50px;
+	border-height: 50px;
+	border-radius: 10px;
+	font-size: 1em;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.menu ul {
 	list-style-type: none;
-	margin: 20px;
 }
 
+.menu  {
+	display: block;
+}
+
+.klubi {
+	margin: 50px;
+}
+
+.kontakt {
+	margin: 50px;
+}
+
+.treeningud {
+	margin-left: 50px;
+}
+
+.treeningud img {
+	max-width: 750px;
+	max-height: 500px;
+}
+
+.lisateave {
+	font-variant: small-caps;
+}
+
+.liikmed {
+	margin: 50px;
+}
+
+.tegevus {
+	margin: 50px;
+}
+.lingid {
+	margin: 50px;
+}
