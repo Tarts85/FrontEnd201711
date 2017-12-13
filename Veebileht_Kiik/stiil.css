@@ -6,11 +6,10 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#596a72', endColorstr='#596a72',GradientType=0 ); /* IE6-9 */
 	box-sizing: border-box;
 	font-family: 'Roboto', sans-serif;
-}			
+}		
 
-h1 {
-	text-align: center;
-	color: rgba(256, 256, 256, 0.2);
+h2 {
+	margin-bottom: 5%;
 }
 
 h2 a {
@@ -20,6 +19,7 @@ h2 a {
 
 header a {
 	font-size: 1.5em;
+	font-weight: bold;
 	display: inline;
 	text-decoration: none;
 	color: rgba(214, 255, 244, 0.8);
@@ -29,13 +29,15 @@ header img {
 	margin-top: 25px;
 	margin-left: 40%;
 	margin-right: 40%;
-	width: 300px;
+	width: 200px;
 }
 
 table {
 	border: 1px solid rgba(115, 115, 115, 0.5);
 	border-radius: 5px;
 	padding: 10px;
+	margin: 5% 0;
+	max-width: 100%;
 }
 table th {
 	padding: 5px;
@@ -49,45 +51,51 @@ table td {
 
 p {
 	text-align: justify;
+	line-height: 1.5em;
+}
+
+nav img {
+	margin: 5px;
+	/*background-color: rgba(255,250,250, 0.4);
+	border-radius: 15px;*/
+}
+
+.juhatus {
+	margin-top: 15px;
+}
+
+.content.center {
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.section-header {
+	margin-left: 25%;
+	margin-right: 25%;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 5px;
+	min-width: 150px;
+}
+
+.treeningud .section-header {
+	min-width: 180px;
 }
 
 .menu a:hover {
 	background-color: rgba(40, 214, 185, 0.3 );
 	border-radius: 10px;
 }
-
-.menu {
-	border-width: 50px;
-	border-height: 50px;
-	border-radius: 10px;
-	font-size: 1em;
-	text-align: center;
-	margin-top: 50px;
-}
-
-.menu ul {
-	list-style-type: none;
-}
-
-.menu  {
-	display: block;
-}
-
 .klubi {
-	margin: 50px;
-}
-
-.kontakt {
-	margin: 50px;
+	margin: 5% auto;
 }
 
 .treeningud {
-	margin-left: 50px;
+	margin: 5% auto;
 }
 
 .treeningud img {
-	max-width: 750px;
-	max-height: 500px;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .lisateave {
@@ -95,12 +103,12 @@ p {
 }
 
 .liikmed {
-	margin: 50px;
+	margin: 5% auto;
 }
 
 .tegevus {
-	margin: 50px;
+	margin: 5% auto;
 }
 .lingid {
-	margin: 50px;
+	margin: 5% auto;
 }
