@@ -21,7 +21,7 @@
         "module": "system",
         "sourceMap": true,
         "lib":[ "dom", "es5", "es6", "es2016.array.include" ],
-        "outFile": "temp/script.js",
+        "outFile": "./temp/script.js",
         "baseUrl": "./temp/",
         "paths": {
             "*": ["*", "generated/*"]
