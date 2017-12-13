@@ -1,35 +1,35 @@
 "use strict";
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
+/*
 //alert ("yoman");
 //algv22rtustamine
 var vana = 5;
-var muutuja = 5;
-var konstant = 5;
+let muutuja = 5;
+const konstant = 5;
+
 //konstant = 5;
 muutuja = 6;
+
 if (true) {
     var vana = 7;
-    var muutuja_1 = 6;
-    console.log(muutuja_1);
+    let muutuja = 6;
+    console.log(muutuja);
 }
+
 console.log(muutuja);
 console.log(vana);
-var _a = [17, 12, 33], arv1 = _a[0], arv3 = _a[2];
-arv1 = arv3;
-var kass = { nimi: 'Tom', vanus: 8 };
-var nimi = kass.nimi, vanus = kass.vanus;
-var esimene = [1, 2];
-var teine = [3, 4];
-var kombineeri = [0].concat(esimene, teine, [5]);
-var vaikimisi = { toit: 'terav', hinnaklass: '$$', myratase: 'vali' };
-var shokolateeria = __assign({}, vaikimisi, { toit: 'magus' });
+
+let [arv1,, arv3] = [17, 12, 33];
+arv1 = arv3
+const kass = {nimi: 'Tom',vanus: 8};
+const {nimi,vanus} = kass;
+
+const esimene = [1,2];
+const teine = [3, 4];
+const kombineeri = [0, ...esimene, ...teine, 5];
+
+const vaikimisi = {toit: 'terav', hinnaklass: '$$', myratase: 'vali'};
+const shokolateeria = { ...vaikimisi, toit: 'magus'};
+*/
 /*
 //muutuja tyybid
 //arvud
@@ -56,7 +56,7 @@ const kaart: [string, number, number] =['Tallinn',125,32];
 
 //enumeraator - loendaja
 
-enum V2rv{
+const enum V2rv{
     Punane,
     Roheline,
     Sinine
@@ -70,13 +70,123 @@ suvaline = 'Tere';
 function funk ():void {}
 function funk2 ():never {while (true) {throw new Error('Viga')}}
 
+
 //teisendamine
 const  s6naPikkus: number = (suvaline as string).length;
-*/
-var arv4 = 12, arv5 = 13, arv6 = 14;
+
+let arv4: number = 12,arv5 = 13,arv6 = 14;
 arv4 = 13;
-var fikseerituds6num = 12;
+*/
+/*
+//if,switch ja conditional
+const enum Loom{Muu, Koer, Kass};
+const loom = Loom.Kass
+
+//conditional operator
+const kasKass = loom === Loom.Kass ? 'On kyll kass' : 'Ei ole kass'
+const kasKoer = loom === Loom.Kass ? 'On kyll kass' : (loom === Loom.Koer ? 'On kyll koer' : 'ei ole kumbki');
+console.log(kasKoer);
+
+// ===, == , !== ,!=, >=, <=
+//if
+if(loom === Loom.Kass) {
+//kui kass
+    
+} else if(loom === Loom.Koer) {
+// kui koer
+    
+} else{
+// kui muu
+    
+}
+
+//switch
+const arv :number = 10;
+switch (arv){
+    case 1 :
+        // kui selle arvu v22rtus on 1
+        break;
+    case 10:
+        // kui selle arvu v22rtus on 1
+        break;
+    case 12:
+        // kui selle arvu v22rtus on 1
+        break;
+}
+
+*/
+/*
+//valikuline;
+type Saadetis = 'saadetud' | 'saatmata' | number
+let fikseerituds6num: Saadetis = 12;
 fikseerituds6num = 'saadetud';
+const sum = (x:number, y:number) => x+y;
+const summa = sum(arv4,arv5);
+*/
+//tsyklid
+/*
+let obj :object = {vanus : 13, nimi : 'sssd',numbrid:[1,2,3,4,5]}
+const massiiv2 = [1,12,3,4,5,6,7,8,9,];
+for(let i = 0; i < massiiv2.length; i++) {
+    const element = massiiv2[i];
+    console.log(element);
+}
+
+for (const i of massiiv2) {
+    console.log(i);
+}
+
+for (const key in massiiv2) {
+    if (massiiv2.hasOwnProperty(key)){
+        const element :number = massiiv2[key];
+        console.log(element);
+        };
+}
+
+massiiv2.forEach(Element => {
+    console.log(Element);
+});
+
+let kasJookseb = true;
+let kaugus = 0;
+while(kasJookseb) {
+    if(kaugus === 100){
+        kasJookseb = false;
+    }
+    if(kaugus *20 === 111){
+        break;
+    }
+    if(kaugus *20 === 111){
+        continue;
+    }
+kaugus++;
+}
+// teeb esimese ringi igaljuhul
+do {
+    
+} while(kasJookseb)
+//l6pmatus
+while(true){}
+
+for(;;){}
+*/
+var arv4 = 4;
 var sum = function (x, y) { return x + y; };
-var summa = sum(arv4, arv5);
+var sum3 = function (x, y) { return x + y; };
+var summa = sum(arv4, arv4);
+function sum2(x, y) {
+    return x + y;
+}
+var summa2 = sum2(arv4, arv4);
+var sum4 = function Sum4(x, y, z) {
+    if (x === void 0) { x = 5; }
+    if (y === void 0) { y = 6; }
+    if (z)
+        return x + y + z;
+    else
+        return x + y;
+};
+var summa3 = sum4(arv4);
+var summa4 = sum4(23, 233, 55);
+var summa5 = sum4();
 //# sourceMappingURL=script.js.map
