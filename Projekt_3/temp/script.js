@@ -1,33 +1,35 @@
+"use strict";
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 //alert ("yoman");
 //algv22rtustamine
 var vana = 5;
-let muutuja = 5;
-const konstant = 5;
-
+var muutuja = 5;
+var konstant = 5;
 //konstant = 5;
-muutuja = 6; 
-
+muutuja = 6;
 if (true) {
     var vana = 7;
-    let muutuja = 6;
-    console.log(muutuja);
+    var muutuja_1 = 6;
+    console.log(muutuja_1);
 }
-
 console.log(muutuja);
 console.log(vana);
-
-let [arv1,, arv3] = [17, 12, 33];
-arv1 = arv3
-const kass = {nimi: 'Tom',vanus: 8};
-const {nimi,vanus} = kass;
-
-const esimene = [1,2];
-const teine = [3, 4];
-const kombineeri = [0, ...esimene, ...teine, 5];
-
-const vaikimisi = {toit: 'terav', hinnaklass: '$$', myratase: 'vali'};
-const shokolateeria = { ...vaikimisi, toit: 'magus'};
-
+var _a = [17, 12, 33], arv1 = _a[0], arv3 = _a[2];
+arv1 = arv3;
+var kass = { nimi: 'Tom', vanus: 8 };
+var nimi = kass.nimi, vanus = kass.vanus;
+var esimene = [1, 2];
+var teine = [3, 4];
+var kombineeri = [0].concat(esimene, teine, [5]);
+var vaikimisi = { toit: 'terav', hinnaklass: '$$', myratase: 'vali' };
+var shokolateeria = __assign({}, vaikimisi, { toit: 'magus' });
 /*
 //muutuja tyybid
 //arvud
@@ -40,7 +42,7 @@ const eijah: boolean = true; //false
 //s6na aka tekts
 const string : string = 'Tere \' s6na';
 const vanus = 37;
-const vanusTekstis = `ta on ${vanus} aastat vana. 
+const vanusTekstis = `ta on ${vanus} aastat vana.
 Ta saab ${vanus+1} aastat vanaks`;
 console.log(vanusTekstis);
 // massiivid
@@ -48,7 +50,7 @@ const list:number[] = [1,2,3];
 console.log(`Massiivi esimene element ${list[0]}`);
 list[1] = 20;
 
-//Tuple 
+//Tuple
 const punkt: [number, number] =[125,32];
 const kaart: [string, number, number] =['Tallinn',125,32];
 
@@ -68,16 +70,13 @@ suvaline = 'Tere';
 function funk ():void {}
 function funk2 ():never {while (true) {throw new Error('Viga')}}
 
-//teisendamine 
+//teisendamine
 const  s6naPikkus: number = (suvaline as string).length;
 */
-let arv4: number = 12,arv5 = 13,arv6 = 14;
+var arv4 = 12, arv5 = 13, arv6 = 14;
 arv4 = 13;
-
-
-//valikuline;
-type Saadetis = 'saadetud' | 'saatmata' | number
-let fikseerituds6num: Saadetis = 12;
+var fikseerituds6num = 12;
 fikseerituds6num = 'saadetud';
-const sum = (x:number, y:number) => x+y;
-const summa = sum(arv4,arv5);
+var sum = function (x, y) { return x + y; };
+var summa = sum(arv4, arv5);
+//# sourceMappingURL=script.js.map
