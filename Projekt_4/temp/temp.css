@@ -20,7 +20,11 @@
     border-width: 1px;
     border-style: solid;
 }
-.img{
-    width: 100px;
-    
+
+.info{
+    width:100px;
+
+}
+#carouselExampleIndicators{
+    width: 640px;
 }
