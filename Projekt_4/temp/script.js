@@ -1,80 +1,189 @@
 'use strict';
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
 /* algväärtustamine */
 //alert("hello");
 console.log('hello TS');
-var vana = 5;
-var muutuja = 5;
-var konstant = 5;
+/*
+var vana= 5;
+let muutuja = 5;
+const konstant = 5;
+
 //konstant = 5;
 muutuja = 5;
-if (true) {
+
+if(true) {
     var vana = 6;
-    var muutuja_1 = 6;
+    let muutuja = 6;
     //muutuja ="ddfjf"
-    console.log(muutuja_1);
+    console.log(muutuja);
 }
 console.log(vana);
 console.log(muutuja);
-var _a = [12, 12, 33], arv1 = _a[0], arv2 = _a[1], arv3 = _a[2];
+
+let [arv1, arv2, arv3] = [12,12,33];
 arv1 = arv3;
-var kass = { nimi: 'Tom', vanus: 8 };
-var nimi = kass.nimi, vanus = kass.vanus;
-var esimene = [1, 2];
-var teine = [3, 4];
-var kombineeri = [0].concat(esimene, teine, [5]);
-var vaikimisi = { toit: 'terav', hinnaklass: '$$', myratase: 'vali' };
-var shokolateeria = __assign({}, vaikimisi, { toit: 'magus' });
+const kass ={nimi: 'Tom', vanus: 8};
+const {nimi, vanus} = kass;
+
+
+const esimene = [1,2];
+const teine =[3,4];
+const kombineeri =[0,...esimene, ...teine, 5];
+
+const vaikimisi ={toit:'terav', hinnaklass: '$$', myratase: 'vali'};
+const shokolateeria = {...vaikimisi, toit: 'magus',};
+
+
+
 /*Muutuja tüübid */
+/*
 //arvud
-var decimal = 6;
-var hex = 0x12ff26;
-var binary = 0x12ff26;
-var octal = 3867;
+const decimal: number = 6;
+const hex = 0x12ff26;
+const binary = 0x12ff26;
+const octal = 0o7433;
+
+
 //tõene või väär
-var eijah = true; // false
+var eijah: boolean = true; // false
+
+
 //Sõne aka tekst
-var string = 'Tere \'sõne';
-var vanus1 = 37;
-var vanusTekstis = 'Ta on "${vanus} aastat vana. Ta saab ${vanus+1} aastat vanaks.';
+const string: string = 'Tere \'sõne';
+const vanus1 = 37;
+const vanusTekstis = 'Ta on "${vanus} aastat vana. Ta saab ${vanus+1} aastat vanaks.';
 console.log(vanusTekstis);
+
+
 //Massiivid
-var list = [1, 2, 3];
+const list: number[] = [1,2,3];
 console.log('Massiivi esimene element ${list[0]}');
 list[1] = 20;
+
+
 //Tuple
-var punkt = [123, 32];
-var kaart = ['Tallinn', 123, 32];
+const punkt: [number, number] =[123, 32];
+const kaart: [string, number, number] =['Tallinn', 123, 32];
+
+
 //Enumeraator - loendaja
-var V2rv;
-//Enumeraator - loendaja
-(function (V2rv) {
-    V2rv[V2rv["Punane"] = 0] = "Punane";
-    V2rv[V2rv["Roheline"] = 1] = "Roheline";
-    V2rv[V2rv["Sinine"] = 10] = "Sinine";
-})(V2rv || (V2rv = {}));
-var v2rv = V2rv.Sinine;
+const enum V2rv{
+    Punane,
+    Roheline,
+    Sinine =10
+}
+const v2rv = V2rv.Sinine;
+
+
 //suvaline
-var suvaline = 'Tere'; //hoidu sektstioonist
+let suvaline: any = 'Tere'; //hoidu sektstioonist
 suvaline = 'Tere';
-function funk() { }
-function funk2() { while (true) {
-    throw new Error('viga');
-} }
+function funk():void{}
+function funk2():never{while (true) {throw new Error('viga');} }
+
+
 //Teisendamine
-var sõnepikkus = suvaline.length;
-var fikseerituds6num = 12;
+const sõnepikkus: number = (suvaline as string).length;
+
+
+//Valikuline
+type Saadetis = 'Saadetud' | 'Saatmata' | number
+let fikseerituds6num: Saadetis = 12;
 fikseerituds6num = 'Saadetud';
 //fikseerituds6num ='ssdfrf';
-var arv14 = 12, arv5 = 13, arv6 = 14;
-arv1 = 13;
+let arv14: number = 12, arv5 = 13, arv6 =14
+arv = 13;
+*/
+/*if, switch ja conditional
+//conditional
+const enum Loom{Kass, Koer, Muu};
+const loom = Loom.Kass
+const kasKass = loom === Loom.Kass ? 'On küll kass': 'Ei ole kass';
+const misLoom = loom === Loom.Kass? 'On küll kass': (loom === Loom.Koer ?'On küll koer' :'Ei ole kumbki');
+
+
+// ===, ==, !==, !=, >=, <=
+
+// if
+if(loom === Loom.Kass){
+    // kui kass
+} else if(loom === Loom.Koer){
+    //kui koer
+}else{
+//Kõik muu
+}
+
+// switch
+const arv: number= 10;
+switch (arv) {
+    case 1:
+     // kui arv on 1
+    break;
+    case 10:
+    // kui arv on 10
+    break;
+    default:
+    // kui arv on midagi muud
+    break;
+}*/
+/*tsüklid*/
+/*
+const massiiv2 = [1,12,3,4,5,6,7,8];
+const obj= {vanus: 13, numbrid: [12,12], nimi: 'sssd'};
+for (let index = 0; index < massiiv2.length; ++index) {
+    const element = massiiv2[index];
+    console.log(element);
+}
+
+for (const iterator of massiiv2) {
+    console.log(iterator);
+    
+}
+for (const key in massiiv2) {
+    if (massiiv2.hasOwnProperty(key)) {
+        const element = massiiv2[key];
+        console.log(element);
+        
+    }
+}
+massiiv2.forEach(element =>{console.log(element); });
+
+let kasJookseb = true;
+let kaugus = 0;
+while (kasJookseb) {
+    if(kaugus = 100){
+        kasJookseb = false;
+    }
+    if(kaugus*20 === 111){
+        break;
+    }
+    if(kaugus*20 === 111){
+        continue;
+    }
+    ++kaugus;
+//Teeb esimese ringi igaljuhul
+do{
+ //
+} while(kasJookseb);
+while(true){}
+for(;;){}
+*/
+var arv4 = 4;
 var sum = function (x, y) { return x + y; };
-var summa = sum(arv, arv);
+var sum3 = function (x, y) { return x + y; };
+var summa = sum(arv4, arv4);
+function sum2(x, y) {
+    return x + y;
+}
+var summa2 = sum2(arv4, arv4);
+var sum4 = function (x, y, z) {
+    if (x === void 0) { x = 5; }
+    if (y === void 0) { y = 6; }
+    if (z)
+        return x + y + z;
+    else
+        return x + y;
+};
+var summa3 = sum4(arv4);
+var summa4 = sum4();
+var summa5 = sum4(23, 233, 55);
 //# sourceMappingURL=script.js.map
