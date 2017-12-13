@@ -30,7 +30,7 @@ const shokolateeria = { ...vaikimisi, toit: 'magus' };/*
 */
 
 /* Muutuja tüübid */
-
+/*
 // arvud
 const decimal: number = 6;
 const hex = 0x12ff26;
@@ -56,7 +56,7 @@ const punkt: [number, number] = [125, 32];
 const asukoht: [string, number, number] = ['Tallinn', 125, 32];
 
 // Enumeraator - loendaja
-enum V2rv{
+const enum V2rv{
     Punane,
     Roheline,
     Sinine = 10
@@ -76,11 +76,95 @@ type Saadetis = 'Saadetud' | 'Saatmata' | number;
 let fikseeritudS6num: Saadetis = 12;
 fikseeritudS6num = 'Saadetud';
 //fikseerituds6num = 'ssdfrf';
+*/
 
-let arv4: number = 12, arv5 = 13, arv6 = 14;
-arv4 = 13;
+/* if, switch ja conditional */
+/*// conditional
+const enum Loom{Muu, Koer, Kass};
+const loom = Loom.Kass;
+const kasKass = loom === Loom.Kass ? 'On Küll kass' : 'Ei ole kass';
+const misLoom = loom === Loom.Kass ? 'On Küll kass' : 
+    (loom === Loom.Koer ? 'On Küll koer' : 'Ei ole kumbki');
 
+// if
+// ===, == , !==, !=, >=, <=
+if(loom === Loom.Kass){
+    // kui kass
+} else if (loom === Loom.Koer) {
+    // kui koer
+} else {
+    // kui muu
+}
+// switch
+const arv: number = 10;
+switch (arv) {
+    case 1:
+        // kui arv on 1
+        break;
+    case 10:
+        // kui arv on 10
+        break;
+    default:
+        // kui arv midagi muud
+        break;
+}*/
 
+/*tsükklid*/
+/*
+const massiiv2 = [1,12,3,4,5,6,7,8];
+const obj = {vanus: 13, numbrid: [12,12], nimi: 'sssd'};
+for (let index = 0; index < massiiv2.length; ++index) {
+    const element = massiiv2[index];
+    console.log(element);
+}
+for (const iterator of massiiv2) {
+    console.log(iterator);
+}
+for (const key in massiiv2) {
+    if (massiiv2.hasOwnProperty(key)) {
+        const element = massiiv2[key];
+        console.log(element);
+    }
+}
+massiiv2.forEach( element => {console.log(element); });
 
-const sum = (x:number, y:number)=>x+y;
+let kasJookseb = true;
+let kaugus = 0;
+while (kasJookseb) {
+    if(kaugus === 100){
+        kasJookseb = false;
+    }
+    if(kaugus*20 === 111){
+        break;
+    }
+    if(kaugus*20 === 150){
+        continue;
+    }
+    ++kaugus;
+}
+// Teeb esimese ringi igaljuhul
+do {
+    // Loogika
+} while (kasJookseb);
+// lõpmatus
+while(true){}
+for(;;){}
+*/
+
+const arv4 = 4;
+const sum = (x:number, y:number) => x + y;
+const sum3 = (x:number, y:number): number => { return x + y };
 const summa = sum(arv4, arv4);
+function sum2(x: number, y:number): number {
+    return x + y;
+}
+const summa2 = sum2(arv4, arv4);
+const sum4 = function(x = 5, y = 6, z? :number) {
+    if(z)
+        return x + y + z;
+    else
+        return x + y;
+}
+const summa3 = sum4(arv4);
+const summa4 = sum4();
+const summa5 = sum4(23,233,55);
