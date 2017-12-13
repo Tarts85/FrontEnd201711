@@ -12,7 +12,10 @@
     border-style: solid;
     background-color: lightpink;
 }
-img {
+.info {
     width: 100px;
     height: 100px;
+}
+#carouselExampleIndicators {
+    width: 640px;
 }
