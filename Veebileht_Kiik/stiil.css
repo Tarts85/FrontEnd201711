@@ -9,7 +9,7 @@ body {
 }		
 
 h2 {
-	margin-bottom: 5%;
+	margin: 7% auto;
 }
 
 h2 a {
@@ -72,7 +72,7 @@ nav img {
 .section-header {
 	margin-left: 25%;
 	margin-right: 25%;
-	background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(23, 162, 184, 0.1);
 	border-radius: 5px;
 	min-width: 150px;
 }
@@ -85,13 +85,6 @@ nav img {
 	background-color: rgba(40, 214, 185, 0.3 );
 	border-radius: 10px;
 }
-.klubi {
-	margin: 5% auto;
-}
-
-.treeningud {
-	margin: 5% auto;
-}
 
 .treeningud img {
 	max-width: 100%;
@@ -102,13 +95,14 @@ nav img {
 	font-variant: small-caps;
 }
 
-.liikmed {
-	margin: 5% auto;
+.btn:hover {
+	cursor: pointer;
 }
 
-.tegevus {
-	margin: 5% auto;
+.btn-group {
+	margin: 2% 0;
 }
-.lingid {
-	margin: 5% auto;
+
+.dropdown-menu {
+	max-width: 100px;
 }
