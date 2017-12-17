@@ -16,6 +16,7 @@
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-dark">
 			  <a class="navbar-brand" href="#">
+			  	<h1 class="text-hide">Tartu Rock Climbing Club Crux</h1>
 			  	<img src="bg/5.png" width="100" height="75" alt="cruxi logo">
 			  </a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,14 +42,11 @@
 			      <li class="nav-item">
 			        <a class="nav-link" href="#contact">Contact</a>
 			      </li>
-			      <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			        Lang
-			        </a>
-			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			          <a class="dropdown-item mw-75" href="crux.html"><strong>ET</strong></a>
-			          <a class="dropdown-item mw-75" href="#"><strong>EN</strong></a>
-			        </div>
+			      <li class="nav-item">
+			        <a class="nav-link" href="crux.html">ET</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">EN</a>
 			      </li>
 			    </ul>
 			  </div>
@@ -166,23 +164,23 @@
 							</figure>
 						</div>
 						<h4>Training times</h4>
-						<table class="schedule">
+						<table class="table table-sm">
 							<thead>
 								<tr>
-									<th>Group</th>
-									<th>Tuesday</th>
-									<th>Wednesday</th>
-									<th>Friday</th>
-									<th>Sunday*</th>
+									<th scope="col">Group</th>
+									<th scope="col">Tuesday</th>
+									<th scope="col">Wednesday</th>
+									<th scope="col">Friday</th>
+									<th scope="col">Sunday*</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr> <td>Group I</td><td>18.00</td><td> 18.00 </td><td> 18.00</td><td> 18.00</td></tr>
-								<tr> <td>Group II</td> <td> 19.30 </td><td> 19.30</td><td> 19.30</td><td> 18.00</td></tr>
+								<tr scope="row"> <td>Group I</td><td>18.00</td><td> 18.00 </td><td> 18.00</td><td> 18.00</td></tr>
+								<tr scope="row"> <td>Group II</td> <td> 19.30 </td><td> 19.30</td><td> 19.30</td><td> 18.00</td></tr>
 							</tbody>
 						</table>
-						<p class="registreerimine">Please contact the coach for further information and training registration: sergeinazarenko89(at)gmail.com</p>
-						<p class="lisateave">*Gym training on Sundays. If a coach is present then the wall will also be open</p>
+						<p class="registreerimine">Please contact the coach for further information and training registration: sergeinazarenko89 (at) gmail.com</p>
+						<p class="lisateave">*Gym training on Sundays. If a coach is present then the wall will also be open.</p>
 					</div>
 				</section>
 
@@ -191,7 +189,7 @@
 					<div class="content center">
 						<p>We encourage all member applicants to contribute their time to attain the goals of our club. New members are accepted throughout the entire year if they have base knowledge of safe climbing and belaying techniques and they know how to use them in practice. Member applicants must fill an appliction form and send it to the board. Member applicants must state that they have read the articles of association and they must provide a brief explanation about motivation to become a member. Applications are accepted in electronic form or in paper form if applicants present them in training classes or at club events. Membership fees, donations etc. may be paid to our club account EE191700017002718448 (Luminor Bank).</p>
 						<p>Yearly membership fees have to be paid by all members. The fee is<strong> €10</strong> for students and<strong> €15</strong> for everybody else.</p>
-						<p><a href="docs/Membership_crux.doc"target="_blank">Download member application</a></p><br>
+						<p><a href="docs/Membership_crux.doc"target="_blank">Download membership application</a></p><br>
 						<p>Membership benefits:</p>
 						<ul>
 							<li>A chance to contribute to the development of rock climbing in Estonia (through Estonian Climbing Association)</li>
@@ -224,7 +222,7 @@
 						<ul>
 							<li><a href="http://kaljuronimine.ee/"target="_blank">Tallinn Rock Climbing Club</a></li>
 							<li><a href="http://ronimine.ee"target="_blank">Lasnamäe climbing wall and trainings</a></li>
-							<li><a href="http://www.ronimisministeerium.ee"target="_blank">Bouldering venue</a></li>
+							<li><a href="http://www.ronimisministeerium.ee"target="_blank">The Climbing Ministry</a></li>
 							<li><a href="http://climbing.ee"target="_blank">General information about walls</a></li>
 							<li><a href="http://climbestonia.pbworks.com/w/page/16025698/FrontPage"target="_blank">Boulders and topos</a></li>
 						</ul>
@@ -262,15 +260,18 @@
 							Estonia
 						</address>
 						<div class="btn-group" role="group" aria-label="Basic example">
-						  <a href="https://www.facebook.com/CruxTartu/"target="_blank"><button type="button" class="btn btn-info rounded-circle">Facebook</button></a>
-						  <a href="https://tkkcrux.wordpress.com/"target="_blank"><button type="button" class="btn btn-info rounded-circle">Wordpress</button></a>
+						  <a class="btn btn-info rounded-circle" href="https://www.facebook.com/CruxTartu/" target="_blank" role="button">Facebook</a>
+						  	<a class="btn btn-info rounded-circle" href="https://tkkcrux.wordpress.com/" target="_blank" role="button">Wordpress</a>
 						</div>
+						<h6 class="copyright">Copyright &copy; 2017 Tartu Rock Climbing Club Crux</h6>
 					</div>
 				</section>
 			</div>
 		</div>
 	</footer>
+	<button onclick="topFunction()" id="myBtn" title="To top"><strong>UP</strong></button>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="crux.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>

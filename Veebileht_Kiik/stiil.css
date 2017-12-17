@@ -33,12 +33,11 @@ header img {
 }
 
 table {
-	border: 1px solid rgba(115, 115, 115, 0.5);
+	border: 1px solid rgba(115, 115, 115, 0.3);
 	border-radius: 5px;
-	padding: 10px;
 	margin: 5% 0;
-	max-width: 100%;
 }
+
 table th {
 	padding: 5px;
 	text-align: center;
@@ -64,6 +63,12 @@ nav img {
 	margin-top: 15px;
 }
 
+.copyright {
+	font-variant: small-caps;
+	font-size: 1em;
+	opacity: 0.2;
+}
+
 .content.center {
 	margin-left: 25%;
 	margin-right: 25%;
@@ -86,6 +91,10 @@ nav img {
 	border-radius: 10px;
 }
 
+.table {
+	max-width: 50%;
+}
+
 .treeningud img {
 	max-width: 100%;
 	max-height: 100%;
@@ -103,6 +112,24 @@ nav img {
 	margin: 2% 0;
 }
 
-.dropdown-menu {
-	max-width: 100px;
+.nav-link:hover  {
+	border-bottom: 2px solid rgba(214, 255, 244, 0.8);
 }
+
+#myBtn {
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 99; 
+    border: none; 
+    outline: none;  
+    background-color: rgba(35, 64, 153, 0.3);
+    color: white; 
+    cursor: pointer; 
+    padding: 10px; 
+    border-radius: 10px; 
+}
+
+#myBtn:hover {
+    background-color: rgba(40, 214, 185, 0.3 ); 
