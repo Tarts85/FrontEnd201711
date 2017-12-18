@@ -1,3 +1,14 @@
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /*
 //alert ("yoman");
 //algv22rtustamine
@@ -6,7 +17,7 @@ let muutuja = 5;
 const konstant = 5;
 
 //konstant = 5;
-muutuja = 6; 
+muutuja = 6;
 
 if (true) {
     var vana = 7;
@@ -41,7 +52,7 @@ const eijah: boolean = true; //false
 //s6na aka tekts
 const string : string = 'Tere \' s6na';
 const vanus = 37;
-const vanusTekstis = `ta on ${vanus} aastat vana. 
+const vanusTekstis = `ta on ${vanus} aastat vana.
 Ta saab ${vanus+1} aastat vanaks`;
 console.log(vanusTekstis);
 // massiivid
@@ -49,7 +60,7 @@ const list:number[] = [1,2,3];
 console.log(`Massiivi esimene element ${list[0]}`);
 list[1] = 20;
 
-//Tuple 
+//Tuple
 const punkt: [number, number] =[125,32];
 const kaart: [string, number, number] =['Tallinn',125,32];
 
@@ -70,7 +81,7 @@ function funk ():void {}
 function funk2 ():never {while (true) {throw new Error('Viga')}}
 
 
-//teisendamine 
+//teisendamine
 const  s6naPikkus: number = (suvaline as string).length;
 
 let arv4: number = 12,arv5 = 13,arv6 = 14;
@@ -103,13 +114,13 @@ if(loom === Loom.Kass) {
 const arv :number = 10;
 switch (arv){
     case 1 :
-        // kui selle arvu v22rtus on 1 
+        // kui selle arvu v22rtus on 1
         break;
     case 10:
-        // kui selle arvu v22rtus on 1 
+        // kui selle arvu v22rtus on 1
         break;
     case 12:
-        // kui selle arvu v22rtus on 1 
+        // kui selle arvu v22rtus on 1
         break;
 }
 
@@ -122,7 +133,6 @@ fikseerituds6num = 'saadetud';
 const sum = (x:number, y:number) => x+y;
 const summa = sum(arv4,arv5);
 */
-
 //tsyklid
 /*
 let obj :object = {vanus : 13, nimi : 'sssd',numbrid:[1,2,3,4,5]}
@@ -170,34 +180,75 @@ while(true){}
 
 for(;;){}
 */
-
-const arv4 = 4;
-const sum = (x:number, y:number) => x+y;
-const sum3 = (x:number, y:number) : number =>{return x + y };
-const summa = sum(arv4, arv4);
-function sum2(x:number, y:number){
-    return x+y;
-}
-
-const summa2 = sum2(arv4,arv4);
-const sum4 = function Sum4(x = 5, y = 6,z? : number) {
-    if(z) return x + y + z;
-    else
+var arv4 = 4;
+var sum = function (x, y) { return x + y; };
+var sum3 = function (x, y) { return x + y; };
+var summa = sum(arv4, arv4);
+function sum2(x, y) {
     return x + y;
 }
-
-const summa3 = sum4(arv4);
-const summa4 = sum4(23,233,55);
-const summa5 = sum4();
-
-class klass {
-    private _element : number;
-    constructor (parameeter = 10){
+var summa2 = sum2(arv4, arv4);
+var sum4 = function Sum4(x, y, z) {
+    if (x === void 0) { x = 5; }
+    if (y === void 0) { y = 6; }
+    if (z)
+        return x + y + z;
+    else
+        return x + y;
+};
+var summa3 = sum4(arv4);
+var summa4 = sum4(23, 233, 55);
+var summa5 = sum4();
+var klass = /** @class */ (function () {
+    function klass(parameeter) {
+        if (parameeter === void 0) { parameeter = 10; }
         this._element = parameeter;
     }
-    public getElement(){
+    klass.prototype.getElement = function () {
         return this._element;
-    }
-}
-const instant = new klass(12); 
+    };
+    return klass;
+}());
+var instant = new klass(12);
 console.log(instant.getElement());
+var _this = this;
+/// <reference path = 'app.ts'/>
+var Helper;
+(function (Helper) {
+    function funk(params) {
+        return params;
+    }
+    Helper.funk = funk;
+})(Helper || (Helper = {}));
+var bc = 0;
+var Olend = /** @class */ (function (_super) {
+    __extends(Olend, _super);
+    function Olend() {
+        var _this = _super.call(this, 13) || this;
+        _this.link = { name: 'Home', link: 'http://www.google.com' };
+        var nupp1 = document.querySelector('#nupp1');
+        //        nupp1.addEventListener('click', (event: Event) => { console.log(this)});
+        nupp1.addEventListener('click', _this._onClick.bind(_this));
+        return _this;
+    }
+    Olend.prototype.getName = function () {
+        Helper.funk('Olend');
+        return 'Olend';
+    };
+    Olend.prototype.getLink = function () {
+        return this.link;
+    };
+    Olend.prototype._onClick = function (e) {
+        console.log(this.link.name);
+    };
+    return Olend;
+}(klass));
+var instant2 = new Olend();
+instant2.getElement();
+instant2.getName();
+var nupp1 = document.querySelector('#nupp1');
+var nupp2 = document.getElementsByClassName('nupp2').item(0);
+var nupp3 = document.getElementById('nupp3');
+nupp2.addEventListener('click', function (event) { console.log(this); });
+nupp3.addEventListener('click', function (event) { console.log(_this); });
+//# sourceMappingURL=.app.js.map
