@@ -1,3 +1,4 @@
+"use strict";
 /*
 //alert ("yoman");
 //algv22rtustamine
@@ -6,7 +7,7 @@ let muutuja = 5;
 const konstant = 5;
 
 //konstant = 5;
-muutuja = 6; 
+muutuja = 6;
 
 if (true) {
     var vana = 7;
@@ -41,7 +42,7 @@ const eijah: boolean = true; //false
 //s6na aka tekts
 const string : string = 'Tere \' s6na';
 const vanus = 37;
-const vanusTekstis = `ta on ${vanus} aastat vana. 
+const vanusTekstis = `ta on ${vanus} aastat vana.
 Ta saab ${vanus+1} aastat vanaks`;
 console.log(vanusTekstis);
 // massiivid
@@ -49,7 +50,7 @@ const list:number[] = [1,2,3];
 console.log(`Massiivi esimene element ${list[0]}`);
 list[1] = 20;
 
-//Tuple 
+//Tuple
 const punkt: [number, number] =[125,32];
 const kaart: [string, number, number] =['Tallinn',125,32];
 
@@ -70,7 +71,7 @@ function funk ():void {}
 function funk2 ():never {while (true) {throw new Error('Viga')}}
 
 
-//teisendamine 
+//teisendamine
 const  s6naPikkus: number = (suvaline as string).length;
 
 let arv4: number = 12,arv5 = 13,arv6 = 14;
@@ -103,13 +104,13 @@ if(loom === Loom.Kass) {
 const arv :number = 10;
 switch (arv){
     case 1 :
-        // kui selle arvu v22rtus on 1 
+        // kui selle arvu v22rtus on 1
         break;
     case 10:
-        // kui selle arvu v22rtus on 1 
+        // kui selle arvu v22rtus on 1
         break;
     case 12:
-        // kui selle arvu v22rtus on 1 
+        // kui selle arvu v22rtus on 1
         break;
 }
 
@@ -122,7 +123,6 @@ fikseerituds6num = 'saadetud';
 const sum = (x:number, y:number) => x+y;
 const summa = sum(arv4,arv5);
 */
-
 //tsyklid
 /*
 let obj :object = {vanus : 13, nimi : 'sssd',numbrid:[1,2,3,4,5]}
@@ -170,22 +170,23 @@ while(true){}
 
 for(;;){}
 */
-
-const arv4 = 4;
-const sum = (x:number, y:number) => x+y;
-const sum3 = (x:number, y:number) : number =>{return x + y };
-const summa = sum(arv4, arv4);
-function sum2(x:number, y:number){
-    return x+y;
-}
-
-const summa2 = sum2(arv4,arv4);
-const sum4 = function Sum4(x = 5, y = 6,z? : number) {
-    if(z) return x + y + z;
-    else
+var arv4 = 4;
+var sum = function (x, y) { return x + y; };
+var sum3 = function (x, y) { return x + y; };
+var summa = sum(arv4, arv4);
+function sum2(x, y) {
     return x + y;
 }
-
-const summa3 = sum4(arv4);
-const summa4 = sum4(23,233,55);
-const summa5 = sum4();
+var summa2 = sum2(arv4, arv4);
+var sum4 = function Sum4(x, y, z) {
+    if (x === void 0) { x = 5; }
+    if (y === void 0) { y = 6; }
+    if (z)
+        return x + y + z;
+    else
+        return x + y;
+};
+var summa3 = sum4(arv4);
+var summa4 = sum4(23, 233, 55);
+var summa5 = sum4();
+//# sourceMappingURL=script.js.map
