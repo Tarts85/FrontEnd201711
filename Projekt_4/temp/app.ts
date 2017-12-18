@@ -179,13 +179,25 @@ function sum2(x: number, y:number){
     return x + y;
 }
 const summa2 = sum2(arv4, arv4);
-const sum4 = function(x = 5, y = 6 z :number) {
+const sum4 = function(z :number, x = 5, y = 6 ) {
     if(z)
     return x+ y + z;
     else
     return x + y;
 }
-const summa3 = sum4(arv4);
-const summa4 = sum4();
+const summa3 = sum4(arv4, arv4, arv4);
+const summa4 = sum4(arv4);
 const summa5 = sum4(23,233,55);
+
+class klass {
+    private _element: Number;
+    constructor(parameeter = 10) {
+        this._element = parameeter;
+    }
+    public getElement() {
+     return this._element;   
+    }
+}
+const instant = new klass(12);
+console.log(instant.getElement());
 
