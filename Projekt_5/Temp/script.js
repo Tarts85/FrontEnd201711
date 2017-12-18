@@ -7,6 +7,16 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /* Algväärtustamine */
 console.log('Hello TS');
 var vana = 5;
@@ -149,4 +159,57 @@ var sum4 = function (x, y, z) {
 var summa3 = sum4(arv4);
 var summa4 = sum4();
 var summa5 = sum4(23, 233, 55);
+var Klass = /** @class */ (function () {
+    function Klass(parameeter) {
+        if (parameeter === void 0) { parameeter = 10; }
+        parameeter;
+        this._element = parameeter;
+    }
+    Klass.prototype.getElement = function () {
+        return this._element;
+    };
+    return Klass;
+}());
+var instant = new Klass(12);
+console.log(instant.getElement());
+/// <referece path='app.ts'/>
+var _this = this;
+var Helper;
+(function (Helper) {
+    function funk(params) {
+        return params;
+    }
+    Helper.funk = funk;
+})(Helper || (Helper = {}));
+var bc = 0;
+var Olend = /** @class */ (function (_super) {
+    __extends(Olend, _super);
+    function Olend() {
+        var _this = _super.call(this, 13) || this;
+        _this.link = { name: 'Home', link: 'http://....' };
+        var nupp1 = document.querySelector('#nupp1');
+        //nupp1.addEventListener('click', (event: Event) => { console.log(this); });
+        nupp1.addEventListener('click', _this._onClick.bind(_this));
+        return _this;
+    }
+    Olend.prototype.getName = function () {
+        Helper.funk('Olend');
+        return 'Olend';
+    };
+    Olend.prototype.getLink = function () {
+        return this.link;
+    };
+    Olend.prototype._onClick = function () {
+        console.log(this.link.name);
+    };
+    return Olend;
+}(Klass));
+var instant2 = new Olend();
+instant2.getElement();
+console.log(instant2.getName());
+var nupp1 = document.querySelector('#nupp1');
+var nupp2 = document.getElementsByClassName('nupp2').item(0);
+var nupp3 = document.getElementById('nupp3');
+nupp2.addEventListener('click', function (event) { console.log(this); });
+nupp3.addEventListener('click', function (event) { console.log(_this); });
 //# sourceMappingURL=script.js.map
