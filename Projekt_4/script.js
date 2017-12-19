@@ -1,4 +1,14 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Helper;
 (function (Helper) {
     console.log("helper.ts");
@@ -67,8 +77,102 @@ var Navigation = /** @class */ (function () {
     };
     return Navigation;
 }());
+console.log("page.ts");
+var Page = /** @class */ (function () {
+    function Page() {
+    }
+    Page.prototype._cacheDOM = function () {
+        //tühi
+    };
+    Page.prototype._bindEvents = function () {
+        //tühi
+    };
+    Page.prototype._render = function () {
+        //tühi
+    };
+    return Page;
+}());
 /// <reference path='helper.ts'/>
 /// <reference path='navigation.ts'/>
+/// <reference path='page.ts'/>
+console.log('home.ts');
+var Home = /** @class */ (function (_super) {
+    __extends(Home, _super);
+    function Home() {
+        var _this = _super.call(this) || this;
+        _this._cacheDOM();
+        _this._bindEvents();
+        _this._render();
+        return _this;
+    }
+    Home.prototype._cacheDOM = function () {
+        this._template = Helper.getHTMLTemplate('templates/home-template.html');
+        this._homeModule = document.querySelector('main');
+        this._homeModule.outerHTML = this._template;
+        this._homeModule = document.getElementById('home');
+        this._button = this._homeModule.querySelector('#refresh');
+        this._text = this._homeModule.querySelector('#restOutput');
+        var animals = new Animals();
+        this._refresh();
+    };
+    Home.prototype._bindEvents = function () {
+        this._button.addEventListener('click', this._refresh.bind(this));
+    };
+    Home.prototype._render = function () {
+        this._text.innerHTML = "Id: " + this._restJSON.id + " Sisu: " + this._restJSON.content;
+    };
+    Home.prototype._refresh = function () {
+        var restAnswer = Helper.getHTMLTemplate('http://rest-service.guides.spring.io/greeting');
+        this._restJSON = JSON.parse(restAnswer);
+        this._render();
+    };
+    return Home;
+}(Page));
+/// <reference path='helper.ts'/>
+/// <reference path='navigation.ts'/>
+/// <reference path='Page.ts'/>
+/// <reference path='home.ts'/>
+console.log('animal.ts');
+var Animals = /** @class */ (function () {
+    function Animals() {
+        this._animals = ['Karu', 'Kass', 'Hunt'];
+        this._cacheDOM();
+        this._bindEvents();
+        this._render();
+    }
+    Animals.prototype._cacheDOM = function () {
+        this._microTemplate = Helper.getHTMLTemplate('templates/animal-template.html');
+        this._animalsModule = document.getElementById('animalsModule');
+        this._button = this._animalsModule.querySelector('.button');
+        this._input = this._animalsModule.querySelector('input');
+        this._list = this._animalsModule.querySelector('ul');
+    };
+    Animals.prototype._bindEvents = function () {
+        this._button.addEventListener('click', this.addAnimal.bind(this));
+        //this._list.addEventListener('click', this.removeAnimal.bind(this));
+    };
+    Animals.prototype._render = function () {
+        var _this = this;
+        var animals = '';
+        this._animals.forEach(function (value) {
+            var parsePass1 = Helper.parseHTMLString(_this._microTemplate, '{{name}}', value);
+            animals += parsePass1;
+        });
+        this._list.innerHTML = animals;
+    };
+    Animals.prototype.showAnimals = function () {
+        console.log(this._animals);
+    };
+    Animals.prototype.addAnimal = function (name) {
+        var animalName = (typeof name === 'string') ? name : this._input.value;
+        this._animals.push(animalName);
+        this._render();
+    };
+    return Animals;
+}());
+/// <reference path='helper.ts'/>
+/// <reference path='navigation.ts'/>
+/// <reference path='Page.ts'/>
 console.log('main.ts');
 var App = /** @class */ (function () {
     function App() {
@@ -88,7 +192,15 @@ var App = /** @class */ (function () {
         this._urlChanged();
     };
     App.prototype._urlChanged = function () {
+        var _this = this;
         Helper.formatEmails('at-mail', '(ät)');
+        this._navLinks.forEach(function (value) {
+            if (window.location.hash === value.link) {
+                if (value.link === _this._navLinks[0].link) {
+                    _this._page = new Home();
+                }
+            }
+        });
     };
     App.prototype._checkParams = function () {
     };
