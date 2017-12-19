@@ -190,7 +190,13 @@
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
-              </div>    
+              </div> 
+              <form action="" method="get">
+                <label for="get-name">Nimi:</label>
+                <input id="get-name" type="text" name="nimi">
+                <input type="email" placeholder="sophie@example.com">
+                <input type="submit" value="Salvesta">
+              </form>  
         </main>
         <footer>
             <address>
@@ -200,6 +206,10 @@
                 Kulle Vald <br>
                 Tamme tee 11
             </address>
+            <button onclick="alert('Tere')"/>Vajuta mind</button>
+            <button id="nupp1">Vajuta mind</button>
+            <button id="nupp2">Vajuta mind</button>
+            <button id="nupp3">Vajuta mind</button>
         </footer>
         <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>

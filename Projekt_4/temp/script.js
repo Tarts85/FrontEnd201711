@@ -1,4 +1,14 @@
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /* algväärtustamine */
 //alert("hello");
 console.log('hello TS');
@@ -93,7 +103,6 @@ fikseerituds6num = 'Saadetud';
 let arv14: number = 12, arv5 = 13, arv6 =14
 arv = 13;
 */
-
 /*if, switch ja conditional
 //conditional
 const enum Loom{Kass, Koer, Muu};
@@ -126,8 +135,6 @@ switch (arv) {
     // kui arv on midagi muud
     break;
 }*/
-
-
 /*tsüklid*/
 /*
 const massiiv2 = [1,12,3,4,5,6,7,8];
@@ -170,34 +177,74 @@ do{
 while(true){}
 for(;;){}
 */
-
-const arv4 = 4
-const sum = (x:number, y:number)=> x+y;
-const sum3 = (x:number, y:number): number=>{return x+y};
-const summa = sum(arv4, arv4);
-function sum2(x: number, y:number){
+var arv4 = 4;
+var sum = function (x, y) { return x + y; };
+var sum3 = function (x, y) { return x + y; };
+var summa = sum(arv4, arv4);
+function sum2(x, y) {
     return x + y;
 }
-const summa2 = sum2(arv4, arv4);
-const sum4 = function(z :number, x = 5, y = 6 ) {
-    if(z)
-    return x+ y + z;
+var summa2 = sum2(arv4, arv4);
+var sum4 = function (z, x, y) {
+    if (x === void 0) { x = 5; }
+    if (y === void 0) { y = 6; }
+    if (z)
+        return x + y + z;
     else
-    return x + y;
-}
-const summa3 = sum4(arv4, arv4, arv4);
-const summa4 = sum4(arv4);
-const summa5 = sum4(23,233,55);
-
-class klass {
-    private _element: Number;
-    constructor(parameeter = 10) {
+        return x + y;
+};
+var summa3 = sum4(arv4, arv4, arv4);
+var summa4 = sum4(arv4);
+var summa5 = sum4(23, 233, 55);
+var klass = /** @class */ (function () {
+    function klass(parameeter) {
+        if (parameeter === void 0) { parameeter = 10; }
         this._element = parameeter;
     }
-    public getElement() {
-     return this._element;   
-    }
-}
-const instant = new klass(12);
+    klass.prototype.getElement = function () {
+        return this._element;
+    };
+    return klass;
+}());
+var instant = new klass(12);
 console.log(instant.getElement());
-
+var _this = this;
+/// <reference path='app.ts' />
+var Helper;
+(function (Helper) {
+    function funk(params) {
+        return params;
+    }
+    Helper.funk = funk;
+})(Helper || (Helper = {}));
+var bc = 0;
+var Olend = /** @class */ (function (_super) {
+    __extends(Olend, _super);
+    function Olend() {
+        var _this = _super.call(this, 13) || this;
+        _this.link = { name: 'Home', link: 'http://..' };
+        var nupp1 = document.querySelector('#nupp1');
+        nupp1.addEventListener('click', _this._onClick.bind(_this));
+        return _this;
+    }
+    Olend.prototype.getName = function () {
+        Helper.funk('Olend');
+        return 'Olend';
+    };
+    Olend.prototype.getLink = function () {
+        return this.link;
+    };
+    Olend.prototype._onClick = function (e) {
+        console.log(this.link.name);
+    };
+    return Olend;
+}(klass));
+var instant2 = new Olend();
+instant2.getElement();
+instant2.getName();
+var nupp1 = document.querySelector('#nupp1');
+var nupp2 = document.getElementsByClassName('nupp2').item(0);
+var nupp3 = document.getElementById('nupp3');
+nupp2.addEventListener('click', function (event) { console.log(this); });
+nupp3.addEventListener('click', function (event) { console.log(_this); });
+//# sourceMappingURL=script.js.map

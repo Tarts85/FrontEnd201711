@@ -21,8 +21,8 @@
         "module": "system",
         "sourceMap": true,
         "lib":[ "dom", "es5", "es6", "es2016.array.include" ],
-        "outFile": "temp/script.js",
-        "baseUrl": "./temp/",
+        "outFile": ".script.js",
+        "baseUrl": "./app/",
         "paths": {
             "*": ["*", "generated/*"]
         },
@@ -30,5 +30,5 @@
     },
     "compileOnSave": true,
     "include": [ "**/*.ts" ],
-    "exclude": ["node_modules", "**/*.spec.ts", "comp", "dist"]
+    "exclude": ["node_modules", "**/*.spec.ts", "comp", "dist", "temp"]
 }
