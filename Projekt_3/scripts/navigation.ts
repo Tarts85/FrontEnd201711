@@ -5,7 +5,7 @@ interface INavLink {
 }
 
 class Navigation {
-    private _navs: INavLink;
+    private _navs: INavLink[];
     private _template: string;
     private _microTemplate: string;
     private _navModule: HTMLElement;
@@ -17,13 +17,29 @@ class Navigation {
         this._render();
     }
     private _cacheDOM() {
-        
+        this._template = Helper.getHTMLTemplate('templates/nav-template.html');
+        this._navModule = document.getElementById('mainMenu');
+        this._navModule.outerHTML = this._template;
+        this._navModule = document.getElementById('mainMenu');
+        this._microTemplate = this._navModule.querySelector('script').innerText;
+        this._list = this._navModule.getElementsByTagName('ul').item(0);
     }
     private _bindEvents(){
-        
+        window.addEventListener('hashchange', this._urlChanged.bind(this));
     }
     private _render() {
-        
+        let navLinks = '';
+        this._navs.forEach(
+            (value:INavLink) => {
+                const parsePass1 = Helper.parseHTMLString(this._microTemplate, '{{name}}',value.name);
+                const parsePass2 = Helper.parseHTMLString(parsePass1, '{{link}}',value.name);
+                const setActive = (window.location.hash == value.link) ? 'active' : '';
+                const parsePass3 = Helper.parseHTMLString(parsePass2, '{{active}}',setActive);
+                navLinks += parsePass3;
+                
+            }
+        );
+        this._list.innerHTML = navLinks;
     }
     private _urlChanged(e) {
         this._render();
