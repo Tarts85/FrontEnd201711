@@ -4,20 +4,26 @@ var Helper;
     console.log("helper.ts");
     //linkide loomisega
     //emaili formaadiga
+    Helper.formatEmails = function (className, splitter) {
+        var emails = document.getElementsByClassName(className);
+        for (var index = 0; index < emails.length; ++index) {
+            var emailParts = emails.item(index).innerHTML.split(splitter);
+            var email = emailParts[0] + "@" + emailParts[1];
+            var link = "<a href=\"mailto:" + email + "\">" + email + "</a>";
+            emails.item(index).outerHTML = link;
+        }
+    };
     //templatede saamisega ja nende töötlusega
     Helper.getHTMLTemplate = function (file) {
         var templateHTML = 'fail';
-        var xmlHttP = new XMLHttpRequest();
+        var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function () {
-            if (this.readyState === 4)
-                $$;
-            this.status === 200;
-            {
+            if (this.readyState === 4 && this.status === 200) {
                 templateHTML = this.responseText;
             }
         };
-        xmlHttP.open('GET', file, false);
-        xmlHttP.send();
+        xmlHttp.open('GET', file, false);
+        xmlHttp.send();
         return templateHTML;
     };
     Helper.parseHTMLString = function (target, mustache, content) {
@@ -34,11 +40,11 @@ var Navigation = /** @class */ (function () {
         this._render();
     }
     Navigation.prototype._cacheDOM = function () {
-        this._template = Helper.getHTMLTemplate('template/nav-template.html');
+        this._template = Helper.getHTMLTemplate('templates/nav-template.html');
         this._navModule = document.getElementById('mainMenu');
         this._navModule.outerHTML = this._template;
         this._navModule = document.getElementById('mainMenu');
-        this._microTemplate = this._navModule.querySelector('script').innnerText;
+        this._microTemplate = this._navModule.querySelector('script').innerText;
         this._list = this._navModule.getElementsByTagName('ul').item(0);
     };
     Navigation.prototype._bindEvents = function () {
@@ -72,19 +78,21 @@ var App = /** @class */ (function () {
         this._bindEvents();
         this._setup();
     }
-    App.prototype.bindEvents = function () {
+    App.prototype._bindEvents = function () {
     };
-    App.prototype.setup = function () {
+    App.prototype._setup = function () {
         if (window.location.hash === '') {
             window.location.hash = this._navLinks[0].link;
         }
         var nav = new Navigation(this._navLinks);
+        this._urlChanged();
     };
     App.prototype._urlChanged = function () {
+        Helper.formatEmails('at-mail', '(ät)');
     };
     App.prototype._checkParams = function () {
     };
     return App;
 }());
 var app = new App();
-//# sourceMappingURL=.script.js.map
+//# sourceMappingURL=script.js.map
