@@ -164,7 +164,19 @@ const sum4 = function(x = 5, y = 6, z? :number) {
         return x + y + z;
     else
         return x + y;
-}
+};
 const summa3 = sum4(arv4);
 const summa4 = sum4();
 const summa5 = sum4(23,233,55);
+
+class Klass {
+    private _element: Number;
+    constructor(parameeter = 10) {
+        this._element = parameeter;
+    }
+    public getElement() {
+        return this._element;
+    }
+}
+const instant = new Klass(12);
+console.log(instant.getElement());
