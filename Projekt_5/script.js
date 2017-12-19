@@ -1,4 +1,35 @@
 "use strict";
+var Helper;
+(function (Helper) {
+    console.log('helper.ts');
+    // linkide loomine
+    // e-maili formaat
+    Helper.formatEmails = function (className, splitter) {
+        var emails = document.getElementsByClassName(className);
+        for (var index = 0; index < emails.length; ++index) {
+            var emailParts = emails.item(index).innerHTML.split(splitter);
+            var email = emailParts[0] + "@" + emailParts[1];
+            var link = "<a href=\"mailto:" + email + "\">" + email + "</a>";
+            emails.item(index).outerHTML = link;
+        }
+    };
+    // templiitide saamine ja töötlus
+    Helper.getHTMLTemplate = function (file) {
+        var templateHTML = 'fail';
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                templateHTML = this.responseText;
+            }
+        };
+        xmlHttp.open('GET', file, false);
+        xmlHttp.send();
+        return templateHTML;
+    };
+    Helper.parseHTMLString = function (target, mustache, content) {
+        return target.replace(mustache, content);
+    };
+})(Helper || (Helper = {}));
 /// <reference path='helper.ts'/>
 console.log('navigation.ts');
 var Navigation = /** @class */ (function () {
@@ -54,12 +85,14 @@ var App = /** @class */ (function () {
             window.location.hash = this._navLinks[0].link;
         }
         var nav = new Navigation(this._navLinks);
+        this._urlChanged();
     };
     App.prototype._urlChanged = function () {
+        Helper.formatEmails('at-mail', '(ät)');
     };
     App.prototype._checkParams = function () {
     };
     return App;
 }());
 var app = new App();
-//# sourceMappingURL=.script.js.map
+//# sourceMappingURL=script.js.map
