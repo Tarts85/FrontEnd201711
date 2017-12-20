@@ -10,7 +10,7 @@ class Animals {
         private _animals = ['Karu','Kass', 'Hunt'];
         private _microtemplate: string;
         private _animalsModule: HTMLElement;
-        private _button: HTMLUListElement;
+        private _button: HTMLButtonElement;
         private _input: HTMLInputElement;
         private _list: HTMLUListElement;
     constructor() {
@@ -28,7 +28,7 @@ class Animals {
     }
     protected _bindEvents() {
         this._button.addEventListener('click' , this.addAnimals.bind(this));
-//        this._list.addEventListener('click' , this._removeAnimal.bind(this));
+        this._list.addEventListener('click' , this._removeAnimal.bind(this));
     }
     protected _render() {
         let animals = '';
@@ -47,5 +47,15 @@ class Animals {
         const animalName = (typeof name === 'string') ? name : this._input.value;
         this._animals.push(animalName);
         this._render();
+    }
+    private _deletePerson(e: Event) {
+        if(e.target && (e.target as Element).nodeName === 'BUTTON') {
+            const element = (e.target as Element).parentElement;
+            const parent = element.parentElement;
+            const index = Array.prototype.indexOf.call(parent.children, element);
+            this._participants.splice(index, 1);
+            localStorage.setItem('people', JSON.stringify(this._participants));
+            this._render();
+        }
     }
 }
