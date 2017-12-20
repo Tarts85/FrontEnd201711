@@ -1,0 +1,43 @@
+<main id="event">
+    <ul id="people">
+        
+    </ul>
+
+
+
+<script id="eventTemplate" type="text/template">
+    <li class="peopleItem">
+    <span>
+        {{name}}
+    </span>
+    <span>
+        {{joined}}
+    </span>
+    <button>X</button>
+    </li>
+</script>
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    <input type="range" name="a" value="50"> +
+    <input list="arvud" type="number" name="b" value="23"> = 
+    <output name="result">73</output>
+    <datalist id="arvud">
+        <option value="2"></option>
+        <option value="12"></option>
+        <option value="23"></option>
+    </datalist>
+</form>
+<form action="" method="get">
+    <fieldset>
+    <legend>registreerimise vorm:</legend>
+    <label for="personName"></label>
+    <input required type="text" name="name" id="personName"> <br>
+    <label for="joined">Kas liitud?</label>
+    <select name="joined" id="joined">
+        <option value="No">Ei</option>
+        <option value="Maybe">v6ibolla</option>
+        <option value="Yes">Jah</option>
+    </select>
+    </fieldset>
+    <button type="submit">saada</button>
+</form>
+</main>
