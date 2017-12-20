@@ -29,7 +29,7 @@ class Animals {
     }
     protected _bindEvents() {
         this._button.addEventListener('click', this.addAnimal.bind(this));
-        //this._list.addEventListener('click', this.removeAnimal.bind(this));
+        this._list.addEventListener('click', this._removeAnimal.bind(this));
     }
     protected _render() {
         let animals = '';
@@ -41,16 +41,23 @@ class Animals {
         )
         this._list.innerHTML = animals;
     }
-public showAnimals() {
-    console.log(this._animals);
-}
-public addAnimal(name:string | Event ) {
-    const animalName = (typeof name === 'string') ? name : this._input.value;
-    this._animals.push(animalName);
-    this._render();
+    public showAnimals() {
+        console.log(this._animals);
+    }
+    public addAnimal(name:string | Event ) {
+        const animalName = (typeof name === 'string') ? name : this._input.value;
+        this._animals.push(animalName);
+        this._render();
 
+    }
+    private _removeAnimal(e: Event) {
+        if(e.target && (e.target as Element).nodeName === 'BUTTON') {
+            const element = (e.target as Element).parentElement;
+            const parent = element.parentElement;
+            const index = Array.prototype.indexOf.call(parent.children, element);
+            this._animals.splice(index, 1);
+            this._render();
+        }
+    }         
 }
 
-            
-            }
-}
