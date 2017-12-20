@@ -1,6 +1,9 @@
 /// <reference path='helper.ts'/>
 /// <reference path='navigation.ts'/>
 /// <reference path='page.ts'/>
+/// <reference path='home.ts'/>
+/// <reference path='gallery.ts'/>
+/// <reference path='eventPage.ts'/>
 console.log ('main.ts');
 class App{
     private _navLinks: INavLink[] = [{name: 'Pealeht', link: '#home'},
@@ -10,9 +13,10 @@ class App{
     constructor(){
         this._bindEvents();
         this._setup();
+        this._urlChanged();
     }
     private _bindEvents(){
-    
+        window.addEventListener('hashchange', this._urlChanged.bind(this));
     }
 
     private _setup(){
@@ -20,6 +24,7 @@ class App{
             window.location.hash = this._navLinks[0].link;
         }
         const nav = new Navigation(this._navLinks);
+        this._checkParams();
         this._urlChanged();
     }
 
@@ -28,17 +33,32 @@ class App{
         this._navLinks.forEach(
             (value: INavLink) => {
                 if(window.location.hash === value.link) {
-                    if (value.link === this._navLinks[0].link){
+                    if (value.link === this._navLinks[0].link) {
                         this._page = new Home();
+                    } else if (value.link === this._navLinks[1].link){
+                        this._page = new Gallery();
+                    } else if (value.link === this._navLinks[2].link){
+                        this._page = new EventPage();
                     }
                 }
             }
         );
-
     }
 
     private _checkParams(){
-
+        const name = Helper.getParameterByName('name');
+        const joined = Helper.getParameterByName('joined');
+        if(name && joined) {
+            Helper.removeParams();
+            let people: IParticipant[] = JSON.parse(localStorage.getItem('people'));
+            if(!people) {
+                people = [];
+            }
+            const person: IParticipant = {name, joined}; // {name: name, joined: joined}
+            people.push(person);
+            console.log(people);
+            localStorage.setItem('people', JSON.stringify(people));
+        }
     }
 }
 let app = new App();
