@@ -2,6 +2,7 @@
 /// <reference path='navigation.ts'/>
 /// <reference path='page.ts'/>
 /// <reference path='home.ts'/>
+/// <reference path='gallery.ts'/>
 /// <reference path='eventPage.ts'/>
 console.log('main.ts');
 
@@ -34,6 +35,8 @@ class App {
                 if(window.location.hash === value.link) {
                     if (value.link === this._navLinks[0].link) {
                         this._page = new Home();
+                    } else if (value.link === this._navLinks[1].link) {
+                        this._page = new Gallery();
                     } else if (value.link === this._navLinks[2].link) {
                         this._page = new EventPage();
                     }
