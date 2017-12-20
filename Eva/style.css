@@ -1,11 +1,135 @@
-﻿body
-{background: beige;
+﻿/* terve leht */
+.pais {
+	overflow: hidden;
+	clear: both;
+	background: url(halltaust.jpg) repeat-x;
+	border: 1px #33441c solid;
+	border-radius: 5px;
+	padding: 10px;
+}
+a {
+	text-decoration: none;
+	color: #4a821f;
 }
 
-H1
-{color:pink;
+.mobile {
+	display: none;
 }
-H2
-{color: violet;
 
+/* taust */
+body { 
+	color: #575757;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+
+/* raam */
+#frame { 
+	width: auto; 
+	margin: auto; 
+	background: burlywood;
+	border-radius: 6px;
+}
+/* jalus */
+footer {
+	background: url(halltaust.jpg) repeat-x;
+	border-radius: 5px;
+	padding: 10px;
+	color: white;
+}
+
+/* sisu kast */
+
+article{
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	
+	
+}
+
+
+
+/* tekst triibu keeleõpe */
+	
+	#triibutxt{
+		font-family: 'Roboto Slab', serif;
+		color: burlywood;
+		font-size: 48px;
+		line-height: 95px;
+
+		
+	}
+
+
+/* logo */
+#logo {
+	float: left;
+	padding-right: 20px;
+}
+
+#logo img{
+	height: 100px;
+	width: auto;
+}
+/* menüü */
+nav {
+	float: none;
+	margin: auto;
+	overflow: hidden;
+	display: table;
+	width: 100%;
+	padding: 10px 0;
+	list-style: none;
+	border: 1px rgb(51, 51, 204) solid;
+	border-radius: 5px; 
+	background: linear-gradient(to bottom,  #ebebeb 0%,rgb(51, 51, 204) 100%);
+
+}
+nav li {
+		display: table-cell;
+		float: none;
+		text-align: center;
+		padding: 0;
+		font-size: 18px;
+		font-family: 'Roboto Slab', serif;
+		background: none;
+	}
+
+
+nav li a {
+	color: burlywood;
+	padding: 10px 5px;
+	
+	
+}
+nav li a:hover {
+	border: 1px #33441c solid;
+	border-radius: 5px;
+	background: linear-gradient(to bottom,  #ffffff 0%,#aeaeae 100%);
+	padding: 10px 4px;
+}
+
+/* Sisu */
+article a {
+	text-decoration: underline;
+}
+article a:hover {
+	color: #79b14d;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 10px 0 0 0;
+	line-height: normal;
+}
+h1 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 28px;
+	color: #476222;
+	font-weight: 400;
+}
+h2, h3, h4, h5 {
+	font-family: 'Roboto Slab', serif;
 }

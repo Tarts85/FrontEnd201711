@@ -1,0 +1,20 @@
+.row, .container{
+    background-color: lightblue;
+}
+.row{
+    height: 100px;
+}
+.container-fluid{
+    background-color: lightgoldenrodyellow;
+}
+.col, .col-6, .col-3, .col-9, .col-sm, .col-md-3{
+    border-width: 1px;
+    border-style: solid;
+    background-color: lightpink;
+}
+.info {
+    width:100px!important;
+}
+#carouselExampleIndicators{
+    width: 640px;
+}
