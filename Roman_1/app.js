@@ -11,19 +11,36 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Helper;
 (function (Helper) {
-    console.log('helper.ts');
-    // linkide loomine
-    // emaili formaadiga 
-    // templatede saamisega ja nende töötlusega
+    console.log("helper.ts");
+    // linkide loomisega
+    Helper.getParameterByName = function (name) {
+        var url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+        var result = regex.exec(url);
+        if (!result) {
+            return undefined;
+        }
+        if (!result[2]) {
+            return '';
+        }
+        console.log(result[0]);
+        return decodeURIComponent(result[2].replace(/\+/g, ' '));
+    };
+    Helper.removeParams = function () {
+        window.location.href = window.location.origin + window.location.hash;
+    };
+    // emaili formaadiga
     Helper.formatEmails = function (className, splitter) {
         var emails = document.getElementsByClassName(className);
-        for (var i = 0; i < emails.length; ++i) {
-            var emailParts = emails.item(i).innerHTML.split(splitter);
+        for (var index = 0; index < emails.length; ++index) {
+            var emailParts = emails.item(index).innerHTML.split(splitter);
             var email = emailParts[0] + "@" + emailParts[1];
             var link = "<a href=\"mailto:" + email + "\">" + email + "</a>";
-            emails.item(i).outerHTML = link;
+            emails.item(index).outerHTML = link;
         }
     };
+    // templatede saamisega ja nende töötlusega
     Helper.getHTMLTemplate = function (file) {
         var templateHTML = 'fail';
         var xmlHttp = new XMLHttpRequest();
@@ -50,21 +67,21 @@ var Animals = /** @class */ (function () {
         this._render();
     }
     Animals.prototype._cacheDOM = function () {
-        this._microtemplate = Helper.getHTMLTemplate('templates/animal-template.html');
+        this._microTemplate = Helper.getHTMLTemplate('templates/animal-template.html');
         this._animalsModule = document.getElementById('animalsModule');
         this._button = this._animalsModule.querySelector('.button');
         this._input = this._animalsModule.querySelector('input');
         this._list = this._animalsModule.querySelector('ul');
     };
     Animals.prototype._bindEvents = function () {
-        this._button.addEventListener('click', this.addAnimals.bind(this));
-        //        this._list.addEventListener('click' , this._removeAnimal.bind(this));
+        this._button.addEventListener('click', this.addAnimal.bind(this));
+        this._list.addEventListener('click', this._removeAnimal.bind(this));
     };
     Animals.prototype._render = function () {
         var _this = this;
         var animals = '';
         this._animals.forEach(function (value) {
-            var parsePass1 = Helper.parseHTMLString(_this._microtemplate, '{{name}}', value);
+            var parsePass1 = Helper.parseHTMLString(_this._microTemplate, '{{name}}', value);
             animals += parsePass1;
         });
         this._list.innerHTML = animals;
@@ -72,13 +89,95 @@ var Animals = /** @class */ (function () {
     Animals.prototype.showAnimals = function () {
         console.log(this._animals);
     };
-    Animals.prototype.addAnimals = function (name) {
+    Animals.prototype.addAnimal = function (name) {
         var animalName = (typeof name === 'string') ? name : this._input.value;
         this._animals.push(animalName);
         this._render();
     };
+    Animals.prototype._removeAnimal = function (e) {
+        if (e.target && e.target.nodeName === 'BUTTON') {
+            var element = e.target.parentElement;
+            var parent_1 = element.parentElement;
+            var index = Array.prototype.indexOf.call(parent_1.children, element);
+            this._animals.splice(index, 1);
+            this._render();
+        }
+    };
     return Animals;
 }());
+console.log("page.ts");
+var Page = /** @class */ (function () {
+    function Page() {
+        // tyhi
+    }
+    Page.prototype._cacheDOM = function () {
+        // tyhi
+    };
+    Page.prototype._bindEvents = function () {
+        // tyhi
+    };
+    Page.prototype._render = function () {
+        // tyhi
+    };
+    return Page;
+}());
+/// <reference path='helper.ts'/>
+/// <reference path='page.ts'/>
+console.log("eventPage.ts");
+var EventPage = /** @class */ (function (_super) {
+    __extends(EventPage, _super);
+    function EventPage() {
+        var _this = _super.call(this) || this;
+        _this._cacheDOM();
+        _this._bindEvents();
+        _this._render();
+        return _this;
+    }
+    EventPage.prototype._cacheDOM = function () {
+        this._template = Helper.getHTMLTemplate('templates/event-template.html');
+        this._peopleModule = document.querySelector('main');
+        this._peopleModule.outerHTML = this._template;
+        this._peopleModule = document.getElementById('event');
+        this._microTemplate = this._peopleModule.querySelector('script').innerText;
+        this._list = this._peopleModule.querySelector('ul');
+    };
+    EventPage.prototype._bindEvents = function () {
+        this._list.addEventListener('click', this._deletePerson.bind(this));
+    };
+    EventPage.prototype._render = function () {
+        var _this = this;
+        this._participants = JSON.parse(localStorage.getItem('people'));
+        var people = '';
+        this._participants.forEach(function (value) {
+            var parsePass1 = Helper.parseHTMLString(_this._microTemplate, '{{name}}', value.name);
+            var parsePass2 = Helper.parseHTMLString(parsePass1, '{{joined}}', value.joined);
+            people += parsePass2;
+        });
+        this._list.innerHTML = people;
+    };
+    EventPage.prototype._deletePerson = function (e) {
+        if (e.target && e.target.nodeName === 'BUTTON') {
+            var element = e.target.parentElement;
+            var parent_2 = element.parentElement;
+            var index = Array.prototype.indexOf.call(parent_2.children, element);
+            this._participants.splice(index, 1);
+            localStorage.setItem('people', JSON.stringify(this._participants));
+            this._render();
+        }
+    };
+    return EventPage;
+}(Page));
+_pictures: IPicture[] = [{ title: 'Auto', description: 'Üks Auto', link: 'Auto.jpg' },
+    { title: 'Taevas', description: 'Üks Taevas', link: 'Taevas.jpg' },
+    { title: 'Taevas2', description: 'Üks Taevas2', link: 'Taevas2.jpg' },
+    { title: 'Tilgad', description: 'Üks Tilgad', link: 'Tilgad.jpg' },
+    { title: 'Tilk', description: 'Üks Tilk', link: 'Tilk.jpg' },
+    { title: 'TuhmSulps', description: 'Üks TuhmSulps', link: 'TuhmSulps.jpg' },
+    { title: 'TuhmSulps2', description: 'Üks TuhmSulps2', link: 'TuhmSulps2.jpg' },
+    { title: 'VeeSulps', description: 'Üks VeeSulps', link: 'VeeSulps.jpg' },
+    { title: 'VeeSulps2', description: 'Üks VeeSulps2', link: 'VeeSulps2.jpg' },
+    { title: 'VeeT6us', description: 'Üks VeeT6us', link: 'VeeT6us.jpg' }];
+/// <reference path='helper.ts'/>
 console.log('navigation.ts');
 var Navigation = /** @class */ (function () {
     function Navigation(navs) {
@@ -103,7 +202,7 @@ var Navigation = /** @class */ (function () {
         var navLinks = '';
         this._navs.forEach(function (value) {
             var parsePass1 = Helper.parseHTMLString(_this._microTemplate, '{{name}}', value.name);
-            var parsePass2 = Helper.parseHTMLString(parsePass1, '{{link}}', value.name);
+            var parsePass2 = Helper.parseHTMLString(parsePass1, '{{link}}', value.link);
             var setActive = (window.location.hash == value.link) ? 'active' : '';
             var parsePass3 = Helper.parseHTMLString(parsePass2, '{{active}}', setActive);
             navLinks += parsePass3;
@@ -114,22 +213,6 @@ var Navigation = /** @class */ (function () {
         this._render();
     };
     return Navigation;
-}());
-console.log('page.ts');
-var Page = /** @class */ (function () {
-    function Page() {
-        //tyhi
-    }
-    Page.prototype._cacheDOM = function () {
-        //tyhi
-    };
-    Page.prototype._bindEvents = function () {
-        //tyhi
-    };
-    Page.prototype._render = function () {
-        //tyhi
-    };
-    return Page;
 }());
 /// <reference path='helper.ts'/>
 /// <reference path='navigation.ts'/>
@@ -158,7 +241,7 @@ var Home = /** @class */ (function (_super) {
         this._button.addEventListener('click', this._refresh.bind(this));
     };
     Home.prototype._render = function () {
-        this._text.innerHTML = "id: " + this._restJSON.id + " Sisu: " + this._restJSON.content;
+        this._text.innerHTML = "Id: " + this._restJSON.id + " Sisu: " + this._restJSON.content;
     };
     Home.prototype._refresh = function () {
         var restAnswer = Helper.getHTMLTemplate('http://rest-service.guides.spring.io/greeting');
@@ -170,41 +253,59 @@ var Home = /** @class */ (function (_super) {
 /// <reference path='helper.ts'/>
 /// <reference path='navigation.ts'/>
 /// <reference path='page.ts'/>
+/// <reference path='home.ts'/>
+/// <reference path='eventPage.ts'/>
 console.log('main.ts');
 var App = /** @class */ (function () {
     function App() {
-        this._navLinks = [
-            { name: 'Pealeht', link: '#home' },
-            { name: 'Gallerii', link: '#gallery' },
-            { name: 'Üritus', link: '#event' }
-        ];
+        this._navLinks = [{ name: 'Pealeht', link: '#home' },
+            { name: 'Galerii', link: '#gallery' },
+            { name: 'Üritus', link: '#event' }];
         this._bindEvents();
         this._setup();
+        this._urlChanged();
     }
     App.prototype._bindEvents = function () {
+        window.addEventListener('hashchange', this._urlChanged.bind(this));
     };
     App.prototype._setup = function () {
         if (window.location.hash === '') {
             window.location.hash = this._navLinks[0].link;
         }
         var nav = new Navigation(this._navLinks);
+        this._checkParams();
         this._urlChanged();
     };
     App.prototype._urlChanged = function () {
         var _this = this;
         Helper.formatEmails('at-mail', '(ät)');
         this._navLinks.forEach(function (value) {
-            console.log("lblblblb");
             if (window.location.hash === value.link) {
                 if (value.link === _this._navLinks[0].link) {
                     _this._page = new Home();
+                }
+                else if (value.link === _this._navLinks[2].link) {
+                    _this._page = new EventPage();
                 }
             }
         });
     };
     App.prototype._checkParams = function () {
+        var name = Helper.getParameterByName('name');
+        var joined = Helper.getParameterByName('joined');
+        if (name && joined) {
+            Helper.removeParams();
+            var people = JSON.parse(localStorage.getItem('people'));
+            if (!people) {
+                people = [];
+            }
+            var person = { name: name, joined: joined }; // {name: name, joined: joined}
+            people.push(person);
+            console.log(people);
+            localStorage.setItem('people', JSON.stringify(people));
+        }
     };
     return App;
 }());
 var app = new App();
-//# sourceMappingURL=script.js.map
+//# sourceMappingURL=app.js.map

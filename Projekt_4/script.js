@@ -11,19 +11,19 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Helper;
 (function (Helper) {
-    console.log('helper.ts');
-    // linkide loomine
-    // emaili formaadiga 
-    // templatede saamisega ja nende töötlusega
+    console.log("helper.ts");
+    //linkide loomisega
+    //emaili formaadiga
     Helper.formatEmails = function (className, splitter) {
         var emails = document.getElementsByClassName(className);
-        for (var i = 0; i < emails.length; ++i) {
-            var emailParts = emails.item(i).innerHTML.split(splitter);
+        for (var index = 0; index < emails.length; ++index) {
+            var emailParts = emails.item(index).innerHTML.split(splitter);
             var email = emailParts[0] + "@" + emailParts[1];
             var link = "<a href=\"mailto:" + email + "\">" + email + "</a>";
-            emails.item(i).outerHTML = link;
+            emails.item(index).outerHTML = link;
         }
     };
+    //templatede saamisega ja nende töötlusega
     Helper.getHTMLTemplate = function (file) {
         var templateHTML = 'fail';
         var xmlHttp = new XMLHttpRequest();
@@ -41,44 +41,6 @@ var Helper;
     };
 })(Helper || (Helper = {}));
 /// <reference path='helper.ts'/>
-console.log('animal.ts');
-var Animals = /** @class */ (function () {
-    function Animals() {
-        this._animals = ['Karu', 'Kass', 'Hunt'];
-        this._cacheDOM();
-        this._bindEvents();
-        this._render();
-    }
-    Animals.prototype._cacheDOM = function () {
-        this._microtemplate = Helper.getHTMLTemplate('templates/animal-template.html');
-        this._animalsModule = document.getElementById('animalsModule');
-        this._button = this._animalsModule.querySelector('.button');
-        this._input = this._animalsModule.querySelector('input');
-        this._list = this._animalsModule.querySelector('ul');
-    };
-    Animals.prototype._bindEvents = function () {
-        this._button.addEventListener('click', this.addAnimals.bind(this));
-        //        this._list.addEventListener('click' , this._removeAnimal.bind(this));
-    };
-    Animals.prototype._render = function () {
-        var _this = this;
-        var animals = '';
-        this._animals.forEach(function (value) {
-            var parsePass1 = Helper.parseHTMLString(_this._microtemplate, '{{name}}', value);
-            animals += parsePass1;
-        });
-        this._list.innerHTML = animals;
-    };
-    Animals.prototype.showAnimals = function () {
-        console.log(this._animals);
-    };
-    Animals.prototype.addAnimals = function (name) {
-        var animalName = (typeof name === 'string') ? name : this._input.value;
-        this._animals.push(animalName);
-        this._render();
-    };
-    return Animals;
-}());
 console.log('navigation.ts');
 var Navigation = /** @class */ (function () {
     function Navigation(navs) {
@@ -103,7 +65,7 @@ var Navigation = /** @class */ (function () {
         var navLinks = '';
         this._navs.forEach(function (value) {
             var parsePass1 = Helper.parseHTMLString(_this._microTemplate, '{{name}}', value.name);
-            var parsePass2 = Helper.parseHTMLString(parsePass1, '{{link}}', value.name);
+            var parsePass2 = Helper.parseHTMLString(parsePass1, '{{link}}', value.link);
             var setActive = (window.location.hash == value.link) ? 'active' : '';
             var parsePass3 = Helper.parseHTMLString(parsePass2, '{{active}}', setActive);
             navLinks += parsePass3;
@@ -115,19 +77,18 @@ var Navigation = /** @class */ (function () {
     };
     return Navigation;
 }());
-console.log('page.ts');
+console.log("page.ts");
 var Page = /** @class */ (function () {
     function Page() {
-        //tyhi
     }
     Page.prototype._cacheDOM = function () {
-        //tyhi
+        //tühi
     };
     Page.prototype._bindEvents = function () {
-        //tyhi
+        //tühi
     };
     Page.prototype._render = function () {
-        //tyhi
+        //tühi
     };
     return Page;
 }());
@@ -158,7 +119,7 @@ var Home = /** @class */ (function (_super) {
         this._button.addEventListener('click', this._refresh.bind(this));
     };
     Home.prototype._render = function () {
-        this._text.innerHTML = "id: " + this._restJSON.id + " Sisu: " + this._restJSON.content;
+        this._text.innerHTML = "Id: " + this._restJSON.id + " Sisu: " + this._restJSON.content;
     };
     Home.prototype._refresh = function () {
         var restAnswer = Helper.getHTMLTemplate('http://rest-service.guides.spring.io/greeting');
@@ -169,15 +130,55 @@ var Home = /** @class */ (function (_super) {
 }(Page));
 /// <reference path='helper.ts'/>
 /// <reference path='navigation.ts'/>
-/// <reference path='page.ts'/>
+/// <reference path='Page.ts'/>
+/// <reference path='home.ts'/>
+console.log('animal.ts');
+var Animals = /** @class */ (function () {
+    function Animals() {
+        this._animals = ['Karu', 'Kass', 'Hunt'];
+        this._cacheDOM();
+        this._bindEvents();
+        this._render();
+    }
+    Animals.prototype._cacheDOM = function () {
+        this._microTemplate = Helper.getHTMLTemplate('templates/animal-template.html');
+        this._animalsModule = document.getElementById('animalsModule');
+        this._button = this._animalsModule.querySelector('.button');
+        this._input = this._animalsModule.querySelector('input');
+        this._list = this._animalsModule.querySelector('ul');
+    };
+    Animals.prototype._bindEvents = function () {
+        this._button.addEventListener('click', this.addAnimal.bind(this));
+        //this._list.addEventListener('click', this.removeAnimal.bind(this));
+    };
+    Animals.prototype._render = function () {
+        var _this = this;
+        var animals = '';
+        this._animals.forEach(function (value) {
+            var parsePass1 = Helper.parseHTMLString(_this._microTemplate, '{{name}}', value);
+            animals += parsePass1;
+        });
+        this._list.innerHTML = animals;
+    };
+    Animals.prototype.showAnimals = function () {
+        console.log(this._animals);
+    };
+    Animals.prototype.addAnimal = function (name) {
+        var animalName = (typeof name === 'string') ? name : this._input.value;
+        this._animals.push(animalName);
+        this._render();
+    };
+    return Animals;
+}());
+/// <reference path='helper.ts'/>
+/// <reference path='navigation.ts'/>
+/// <reference path='Page.ts'/>
 console.log('main.ts');
 var App = /** @class */ (function () {
     function App() {
-        this._navLinks = [
-            { name: 'Pealeht', link: '#home' },
-            { name: 'Gallerii', link: '#gallery' },
-            { name: 'Üritus', link: '#event' }
-        ];
+        this._navLinks = [{ name: 'Pealeht', link: '#home' },
+            { name: 'Gallery', link: '#gallery' },
+            { name: 'Üritus', link: '#event' }];
         this._bindEvents();
         this._setup();
     }
@@ -194,7 +195,6 @@ var App = /** @class */ (function () {
         var _this = this;
         Helper.formatEmails('at-mail', '(ät)');
         this._navLinks.forEach(function (value) {
-            console.log("lblblblb");
             if (window.location.hash === value.link) {
                 if (value.link === _this._navLinks[0].link) {
                     _this._page = new Home();
