@@ -19,6 +19,10 @@ h2 {
 	margin: 7% auto;
 }
 
+a {
+	color: rgba(184, 179, 255, 0.8);
+}
+
 h2 a {
 	text-decoration: none;
 	color: black;
